@@ -1,0 +1,22 @@
+.general {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+    	"imagen loginCliente"
+    	"imagen loginCliente"
+    	"imagen loginUsuario"
+    	"redes  loginUsuario";
+}
+.general .imagen {
+    grid-area: imagen;
+}
+.general .loginCliente {
+    grid-area: loginCliente;
+}
+.general .loginUsuario {
+    grid-area: loginUsuario;
+}
+.general .redes {
+    grid-area: redes;
+}
