@@ -3,20 +3,20 @@
     grid-template-rows: auto auto auto auto;
     grid-template-columns: 2fr 1fr;
     grid-template-areas:
-    	"imagen loginCliente"
-    	"imagen loginCliente"
-    	"imagen loginUsuario"
-    	"redes  loginUsuario";
+    	"imagen titulo"
+    	"imagen login"
+    	"imagen login"
+    	"imagen offline";
 }
 .general .imagen {
     grid-area: imagen;
 }
-.general .loginCliente {
-    grid-area: loginCliente;
+.general .titulo {
+    grid-area: titulo;
 }
-.general .loginUsuario {
-    grid-area: loginUsuario;
+.general .login {
+    grid-area: login;
 }
-.general .redes {
-    grid-area: redes;
+.general .offline {
+    grid-area: offline;
 }
