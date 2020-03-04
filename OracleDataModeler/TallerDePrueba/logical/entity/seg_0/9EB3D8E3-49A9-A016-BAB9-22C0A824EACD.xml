@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9EB3D8E3-49A9-A016-BAB9-22C0A824EACD" name="PERSONA">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-04 17:38:28 UTC</createdTime>
+<ownerDesignName>TallerDePrueba</ownerDesignName>
+<engineerTo>
+<item key="5C65D0A7-79DA-F3F9-A49B-6EAE34039C24" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="documentoID" id="2FB9D741-3994-CF4E-55AC-BC99910C5CE8">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-04 17:38:52 UTC</createdTime>
+<ownerDesignName>TallerDePrueba</ownerDesignName>
+<engineerTo>
+<item key="5C65D0A7-79DA-F3F9-A49B-6EAE34039C24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellido" id="2A939680-9B1D-7852-0AFC-C145F91165D2">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-04 17:40:10 UTC</createdTime>
+<ownerDesignName>TallerDePrueba</ownerDesignName>
+<engineerTo>
+<item key="5C65D0A7-79DA-F3F9-A49B-6EAE34039C24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombre" id="4DB9D946-AEDB-6AB7-B989-6092AD29F1B7">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-04 17:41:02 UTC</createdTime>
+<ownerDesignName>TallerDePrueba</ownerDesignName>
+<engineerTo>
+<item key="5C65D0A7-79DA-F3F9-A49B-6EAE34039C24" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DE9BEA26-4182-9364-42FC-5729CA551833" name="PERSONA PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-04 17:39:58 UTC</createdTime>
+<ownerDesignName>TallerDePrueba</ownerDesignName>
+<engineerTo>
+<item key="5C65D0A7-79DA-F3F9-A49B-6EAE34039C24" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2FB9D741-3994-CF4E-55AC-BC99910C5CE8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
