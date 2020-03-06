@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="7261D13A-75B8-778C-A207-011DA94030BC" name="ALUMNO">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:25:30 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idMatricula" id="466E85BE-104C-93BD-6556-8D496A50A749">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:25:37 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreAlumno" id="A28104C8-ADB6-1386-581F-483C52476797">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:25:49 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="direccion" id="FF10D372-82F0-BEC5-2022-7C8B03E7681E">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:25:59 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="C1990B6F-6DD9-218D-6FE4-168DEFB6FD2A">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:26:08 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="96B1C989-0D74-D8AE-EA05-177D5BCA2ECB" name="ALUMNO PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:25:47 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico2</ownerDesignName>
+<engineerTo>
+<item key="9C92AE8A-152A-57E3-C19A-971045A26D61" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>466E85BE-104C-93BD-6556-8D496A50A749</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

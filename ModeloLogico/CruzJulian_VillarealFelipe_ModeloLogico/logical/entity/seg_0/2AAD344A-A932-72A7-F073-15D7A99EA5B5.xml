@@ -1,0 +1,46 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2AAD344A-A932-72A7-F073-15D7A99EA5B5" name="CLIENTE">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 16:59:00 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<hierarchicalParent>D48BA4AE-E4C8-48AF-CBD8-B7EA2C47A1B3</hierarchicalParent>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="servicio" id="A6FAB8A4-D78D-2B7B-CD4E-0AA9CDA88725">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 16:59:06 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="286B00C8-FF02-1259-3FB6-F80CBB125191" name="CLIENTE PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 16:59:15 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A6FAB8A4-D78D-2B7B-CD4E-0AA9CDA88725</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

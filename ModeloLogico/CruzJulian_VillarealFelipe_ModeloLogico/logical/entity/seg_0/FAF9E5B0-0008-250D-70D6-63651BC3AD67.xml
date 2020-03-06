@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FAF9E5B0-0008-250D-70D6-63651BC3AD67" name="MATERIALES">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:15:11 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_material" id="EB7F02BD-5201-0682-B32E-CFB2C0208C7C">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:15:22 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="descripcionMaterial" id="51CA1AC5-6FCE-F5B9-03C8-37E2E9D9FCB5">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:15:32 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="material_tipo_insumo" id="8DC0E137-961B-6577-D06E-D3CC808DFF8B">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:15:45 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="material_tipo_equipo" id="3A1F6106-389D-9298-39F1-0BEC6651AEBF">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:16:01 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="precio" id="1E3F6B8F-D59B-D1EF-0AAA-7EF3B8BDC6CC">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:16:17 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="proveedor" id="1021C313-28D3-BD56-6089-756964CB769A">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:16:29 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8F15458D-AF2E-BA20-9324-2EEC7733FABD" name="MATERIALES PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 17:15:30 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<engineerTo>
+<item key="4DADE91D-6949-C2E2-8129-09C2D0F2535D" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EB7F02BD-5201-0682-B32E-CFB2C0208C7C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

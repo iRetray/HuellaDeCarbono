@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="CruzJulian_VillarealFelipe_ModeloLogico" id="612C66B2-5151-90C1-D3BF-56DBF72FE9F3" version="3.5">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-06 16:32:41 UTC</createdTime>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>612C66B2-5151-90C1-D3BF-56DBF72FE9F3</designId>
+</OSDM_Design>
