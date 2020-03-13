@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PAICIU" directorySegmentName="seg_0" id="1BBD3670-5464-03BE-726F-C603D64ADE27">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:58:00 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<sourcePk>ABFC83F2-7E6D-3AB6-A704-A193445D71C3</sourcePk>
+<targetPk>1D6E0519-8B01-7EC9-239A-1A1413F5604A</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>224F1E5A-5EB7-D994-FBA3-F60C85CA1C81</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9897CF06-F35C-7D2B-E0B5-53DBD9543283</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

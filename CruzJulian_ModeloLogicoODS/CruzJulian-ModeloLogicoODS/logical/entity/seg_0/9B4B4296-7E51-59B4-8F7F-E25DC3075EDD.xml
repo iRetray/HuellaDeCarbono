@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9B4B4296-7E51-59B4-8F7F-E25DC3075EDD" name="ONG">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:19:41 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdentificadorONG" id="49A55ED6-FED5-F2DE-9C50-CD62E7084278">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:24:34 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="218BC6A1-3CD4-CF98-DAE0-BED5D7D60E10">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:24:52 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Descripcion" id="9583F17F-3BD1-C6A2-E418-3E69B5F0D622">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:25:20 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="CB9BF15F-F497-1DA2-1846-5DE861862B89">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:25:31 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefono" id="721B74BC-E6E0-352A-A115-3853503A791F">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:26:31 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdentificacionPersona" id="9AEBE8D6-75DF-669C-67AD-AD9A804FAA9D">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:55:40 UTC</createdTime>
+<generatorID>27617D05-BCC0-89FD-02D4-25C85FA9D01B</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<referedAttribute>A7667E01-6CA6-4B9C-ECC8-E2748910E6CB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="228421BD-F86F-2A7F-8E08-3245DA8C9066" name="ONG PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:24:49 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>49A55ED6-FED5-F2DE-9C50-CD62E7084278</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

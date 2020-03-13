@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="51EA75B9-A01F-9731-C2BB-BDDB8CC0D348" name="POBLACION">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:35:17 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdentificadorPoblacion" id="9DF22918-5DB5-E33C-2E04-FCCA7FC708F1">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:35:23 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="7055D280-848D-D35B-D4E5-AD986B6BC29C">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:35:39 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NumeroHabitantes" id="0C2F85A7-F94E-D0C9-B81B-F3C27DAAD967">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:36:14 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="InversionProyectos" id="B92DEFB9-B535-74CE-E895-854FE8BA93D2">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:39:40 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdentificadorCiudad" id="BFB88FAF-475C-2226-0FDA-CB3F79A3A7C7">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:15:23 UTC</createdTime>
+<generatorID>A96EA36A-2FE8-9C4B-E089-BA6FF64E91F1</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<referedAttribute>05BD363A-EE86-FDA5-0E72-82D5506F6897</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Codigo" id="3175C075-F6C3-D9F9-460B-315B9F3E455D">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:17:19 UTC</createdTime>
+<generatorID>70226CFD-414D-EB7A-0E00-4A4B863A2A4D</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<referedAttribute>5D5065D0-C2A9-044A-C393-D6D3B9CB2BBC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1C23795E-1BE6-C85D-0BB1-7C8A4828E610" name="POBLACION PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:35:38 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>9DF22918-5DB5-E33C-2E04-FCCA7FC708F1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

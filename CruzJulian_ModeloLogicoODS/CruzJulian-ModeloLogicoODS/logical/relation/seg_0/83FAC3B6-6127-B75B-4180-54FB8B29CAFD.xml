@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="PROACT" directorySegmentName="seg_0" id="83FAC3B6-6127-B75B-4180-54FB8B29CAFD">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:16:05 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<sourcePk>4377DEA3-920A-0A31-CF8A-2EDE9F6598BF</sourcePk>
+<targetPk>D20C89ED-6328-0AA6-AB3E-A5278F53A8F5</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>07759929-2D03-0DE7-883E-B42FDC9E8EA9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>794F3B79-8DCF-613C-9E84-BCEA39BA10A8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

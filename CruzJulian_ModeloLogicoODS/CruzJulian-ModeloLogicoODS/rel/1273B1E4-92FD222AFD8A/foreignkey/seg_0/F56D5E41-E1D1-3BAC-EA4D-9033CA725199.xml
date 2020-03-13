@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F56D5E41-E1D1-3BAC-EA4D-9033CA725199" containerWithKeyObject="780B9F50-0082-8D56-BBED-25867EBDCC29" localFKIndex="FF713B34-BCE7-B8AA-7066-4872D8856132" name="CIUDAD_POBLACION_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>A96EA36A-2FE8-9C4B-E089-BA6FF64E91F1</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<referredTableLongName>POBLACION</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>92808096-39E0-C857-6461-2F59339F5DF7</referredTableID>
+<keyObject>2A63BFD5-8F6F-7370-E725-87DD42CD33DE</keyObject>
+<referredKeyID>2A63BFD5-8F6F-7370-E725-87DD42CD33DE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>IdentificadorPoblacion</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

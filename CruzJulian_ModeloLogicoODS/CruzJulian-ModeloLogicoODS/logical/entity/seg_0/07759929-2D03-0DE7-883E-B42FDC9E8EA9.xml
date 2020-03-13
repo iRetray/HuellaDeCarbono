@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="07759929-2D03-0DE7-883E-B42FDC9E8EA9" name="PROYECTO">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:31:46 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Codigo" id="5D5065D0-C2A9-044A-C393-D6D3B9CB2BBC">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:32:57 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Titulo" id="656F2113-44BF-2C01-1D60-5E52B5814B95">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:33:14 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaInicio" id="ECD84B45-593F-4ED3-5DA6-319CDDE87E93">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:33:51 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FechaFinalizacion" id="2214477C-93E5-D270-C852-95CB06FC9AF5">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:34:02 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Presupuesto" id="3CD5F450-3E89-C5A9-744E-9D8CC13AC859">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:34:19 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4377DEA3-920A-0A31-CF8A-2EDE9F6598BF" name="PROYECTO PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:33:11 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5D5065D0-C2A9-044A-C393-D6D3B9CB2BBC</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

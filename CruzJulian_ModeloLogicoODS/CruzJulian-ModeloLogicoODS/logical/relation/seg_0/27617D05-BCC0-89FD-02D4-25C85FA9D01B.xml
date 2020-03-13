@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ONGPER" directorySegmentName="seg_0" id="27617D05-BCC0-89FD-02D4-25C85FA9D01B">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:54:03 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<sourcePk>228421BD-F86F-2A7F-8E08-3245DA8C9066</sourcePk>
+<targetPk>71072727-CEC8-F09C-187E-CB486A504EEB</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9B4B4296-7E51-59B4-8F7F-E25DC3075EDD</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>4962D96B-B5B1-F7A8-B3FA-AED075AF64D3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

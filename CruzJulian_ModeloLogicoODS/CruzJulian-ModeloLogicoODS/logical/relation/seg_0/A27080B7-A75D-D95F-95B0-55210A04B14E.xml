@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ONGSED" directorySegmentName="seg_0" id="A27080B7-A75D-D95F-95B0-55210A04B14E">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 16:30:48 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<sourcePk>228421BD-F86F-2A7F-8E08-3245DA8C9066</sourcePk>
+<targetPk>F8CF8CE5-A120-682C-5B66-4DDAD74B8C3F</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9B4B4296-7E51-59B4-8F7F-E25DC3075EDD</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>0A18E7A7-80DC-A022-4595-DBEACBD659AD</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="2D2D72E3-4C92-D98A-3C0D-66927723F4DF" name="SEDE">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>0A18E7A7-80DC-A022-4595-DBEACBD659AD</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IdentificadorSede" id="479135A7-6A7A-D8B4-4F18-CC3B3B0E331D">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>653DDB0F-FAE6-837E-B102-DFB7ED870055</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="DC47CB50-7686-AA3C-5DF4-C4711EBF4953">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>7BDDC351-ED9B-9BC4-A607-2170A823299D</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ONG_IdentificadorONG" id="73F6D026-F365-E121-846B-3B838EE130A3">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>522DAB84-5041-8233-A0A2-D472BDE3162D</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BA057528-B2BD-ED7B-EDD5-D621692B9962" referredColumn="A346B82E-11F3-D649-1E5A-50FC7227E89A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E7F6982B-ABDE-FB5B-5C66-43C5C98EBA31" name="SEDE_PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>F8CF8CE5-A120-682C-5B66-4DDAD74B8C3F</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="479135A7-6A7A-D8B4-4F18-CC3B3B0E331D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4C6556E4-2B99-8B43-C402-239EDA0E52C7" name="SEDE_ONG_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>A27080B7-A75D-D95F-95B0-55210A04B14E</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="73F6D026-F365-E121-846B-3B838EE130A3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

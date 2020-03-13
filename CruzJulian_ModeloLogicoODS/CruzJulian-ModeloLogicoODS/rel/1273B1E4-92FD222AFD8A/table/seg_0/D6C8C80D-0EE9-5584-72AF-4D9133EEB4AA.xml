@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D6C8C80D-0EE9-5584-72AF-4D9133EEB4AA" name="PERSONA">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>4962D96B-B5B1-F7A8-B3FA-AED075AF64D3</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IdentificacionPersona" id="528E7052-FE37-8F11-7B3D-FDAD6A80666F">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>A7667E01-6CA6-4B9C-ECC8-E2748910E6CB</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombres" id="58871631-F896-9F48-1CEB-7AE806D02845">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>5F9AF1FC-DA82-6B46-0CC1-9888DC793F1E</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ApellidoMaterno" id="59487A9B-CEFF-1501-B2B2-47594EF03294">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>046743D1-3BB3-9C07-2922-2CDFDE995AF2</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ApellidoPaterno" id="80D18419-6D0F-CCFC-3E6E-B0D9DBBFF02D">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>468FA6EB-6897-FAC7-94C4-CEBBAE54A740</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ONG_IdentificadorONG" id="45B8919A-FE26-3B85-EBDC-EC288B5C1908">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>E72D6E4F-6137-8364-B66F-992C5675D0C2</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1FB8AFFC-E878-8EBE-D48A-F28FC42B1DDD" referredColumn="A346B82E-11F3-D649-1E5A-50FC7227E89A"/>
+</associations>
+</Column>
+<Column name="Cargo" id="2F956E7E-4933-F9B6-F491-0DEF459F0BAC">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>40152593-9809-BA42-F292-B1CEAAFB6573</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>EB17BB89-BC40-CE69-E49E-9DCB68595360</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROYECTO_Codigo" id="7BB209A8-D5D1-13E7-5718-4CE5DA192921">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>D51CEDB2-4B12-F921-0635-DFA95D55AA09</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C9A1416C-C1FD-955A-7548-B2EB38E38DCB" referredColumn="F0B79B81-C3C9-9A0E-AE51-C8FA662AF452"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="75465F0B-769E-59C6-DA69-273BE8BD9E89" name="PERSONA_PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>71072727-CEC8-F09C-187E-CB486A504EEB</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="528E7052-FE37-8F11-7B3D-FDAD6A80666F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E0827D6-2E44-3D18-8763-2B01DC698BCD" name="PERSONA__IDX">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>27617D05-BCC0-89FD-02D4-25C85FA9D01B</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="45B8919A-FE26-3B85-EBDC-EC288B5C1908"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9E596D4A-FB0C-3334-8CD4-CF56DB0331F7" name="PERSONA_ONG_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>27617D05-BCC0-89FD-02D4-25C85FA9D01B</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="45B8919A-FE26-3B85-EBDC-EC288B5C1908"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CF77C826-5546-0BEA-EDA5-8A4DF23099FA" name="PERSONA_PROYECTO_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>6CAD1643-09DC-62AB-BD8D-C5D2A5D49D5C</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BB209A8-D5D1-13E7-5718-4CE5DA192921"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

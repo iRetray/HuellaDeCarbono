@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CIUPOB" directorySegmentName="seg_0" id="A96EA36A-2FE8-9C4B-E089-BA6FF64E91F1">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-11 17:17:55 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<engineerTo>
+<item key="1273B1E4-D3AF-6E7B-5ECB-92FD222AFD8A" value="true"/>
+</engineerTo>
+<sourcePk>1D6E0519-8B01-7EC9-239A-1A1413F5604A</sourcePk>
+<targetPk>1C23795E-1BE6-C85D-0BB1-7C8A4828E610</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9897CF06-F35C-7D2B-E0B5-53DBD9543283</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>51EA75B9-A01F-9731-C2BB-BDDB8CC0D348</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

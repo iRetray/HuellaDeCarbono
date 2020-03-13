@@ -1,0 +1,133 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92808096-39E0-C857-6461-2F59339F5DF7" name="POBLACION">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>51EA75B9-A01F-9731-C2BB-BDDB8CC0D348</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IdentificadorPoblacion" id="A6021CB8-7008-527E-CA3B-74FFE5FD1CA5">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>9DF22918-5DB5-E33C-2E04-FCCA7FC708F1</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="09330B58-C161-F25E-5FDD-8A129503BD54">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>7055D280-848D-D35B-D4E5-AD986B6BC29C</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumeroHabitantes" id="D5432C2F-1782-12E9-1A2B-E57ABAA8E68B">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>0C2F85A7-F94E-D0C9-B81B-F3C27DAAD967</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="InversionProyectos" id="33F4C133-5C44-853F-EE33-E494E9EF2AAC">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>B92DEFB9-B535-74CE-E895-854FE8BA93D2</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CIUDAD_IdentificadorCiudad" id="C4B77E86-CC4A-286C-9B64-96FACCB49106">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>BFB88FAF-475C-2226-0FDA-CB3F79A3A7C7</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A212C9DB-9A6D-7B35-0AE5-8EC7BB447DF1" referredColumn="14CA1F16-38A8-C540-4394-604AB7678381"/>
+</associations>
+</Column>
+<Column name="PROYECTO_Codigo" id="97DFEB99-F888-1EC5-469B-0F374D2713D9">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>3175C075-F6C3-D9F9-460B-315B9F3E455D</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E34DB0A1-5C9C-B464-ED46-28D6DB573E75" referredColumn="F0B79B81-C3C9-9A0E-AE51-C8FA662AF452"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2A63BFD5-8F6F-7370-E725-87DD42CD33DE" name="POBLACION_PK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>1C23795E-1BE6-C85D-0BB1-7C8A4828E610</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6021CB8-7008-527E-CA3B-74FFE5FD1CA5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9947F562-E6C7-CAF6-1702-C66FC635F51E" name="POBLACION__IDX">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A96EA36A-2FE8-9C4B-E089-BA6FF64E91F1</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C4B77E86-CC4A-286C-9B64-96FACCB49106"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="93B4D110-2ABA-4E33-C94E-A08C0DE4958B" name="POBLACION_CIUDAD_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>A96EA36A-2FE8-9C4B-E089-BA6FF64E91F1</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4B77E86-CC4A-286C-9B64-96FACCB49106"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02508DC6-0DEB-CDF1-82CE-4B34876ABFDD" name="POBLACION_PROYECTO_FK">
+<createdBy>SALA</createdBy>
+<createdTime>2020-03-13 17:40:11 UTC</createdTime>
+<generatorID>70226CFD-414D-EB7A-0E00-4A4B863A2A4D</generatorID>
+<ownerDesignName>CruzJulian-ModeloLogicoODS</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97DFEB99-F888-1EC5-469B-0F374D2713D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
