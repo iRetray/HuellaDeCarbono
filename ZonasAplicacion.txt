@@ -1,0 +1,17 @@
+1. Pantalla de inicio
+    Que es la huella de carbono
+    INformacion en general
+2. Registrarse y Logearse
+    Errores
+    Correo repetidos
+    Recuperacion de clave
+    (cual es tu email, años) -> clave
+    Clave tener longitud 8
+    correo @correo.com
+    opcional / entidad
+    opcional / registrarse / consulta anonima
+3.  HOme (user - admin)
+    PErfil / aqui tiene que haberse logeado
+    Promedio de huella 
+    Otro calculo
+    el admin no caclula huella huella, solo ve los de su entidad
