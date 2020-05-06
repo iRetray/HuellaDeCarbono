@@ -28,38 +28,27 @@ box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
 
 .general {
     display: grid;
-    grid-template-rows: auto auto auto auto;
-    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-columns: 45fr 65fr;
     grid-template-areas:
-    	"imagen titulo"
-    	"imagen login"
-    	"imagen login"
-    	"imagen offline";
+        "texto imagen"
+        "texto imagen";
 }
 .general .imagen {
     grid-area: imagen;
 }
-.general .titulo {
-    grid-area: titulo;
-}
-.general .login {
-    grid-area: login;
-}
-.general .offline {
-    grid-area: offline;
+.general .texto {
+    grid-area: texto;
 }
 
 /* Configuración para el responsive movil */
 @media screen and (max-width: 800px){
     .general {
         display: grid;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto;
         grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "titulo titulo"
-            "imagen imagen"
-            "login login"
-            "login login"
-            "footer  footer";
+            "texto texto"
+            "imagen imagen";
     }
 }
