@@ -2,6 +2,28 @@
     margin-left: 10px;
 }
 
+.gris {
+    background-color: #2C2C32;
+}
+
+.imgCentral {
+    margin: 50px;
+    -webkit-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.6);
+-moz-box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.6);
+box-shadow: 0px 0px 20px 3px rgba(0,0,0,0.6);
+}
+
+.textoCentral {
+    padding: 20px;
+    margin: auto;
+}
+
+.sombraNav {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+}
+
 .general {
     display: grid;
     grid-template-rows: auto auto auto auto;
