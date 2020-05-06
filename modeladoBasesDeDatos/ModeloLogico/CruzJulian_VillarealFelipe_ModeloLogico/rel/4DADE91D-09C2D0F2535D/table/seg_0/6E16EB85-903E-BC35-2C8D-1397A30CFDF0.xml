@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6E16EB85-903E-BC35-2C8D-1397A30CFDF0" name="InformeTotal">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>BD59C949-1F8C-04C0-3BCA-3340727E5971</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDListaInforme" id="39E3DD93-8493-2164-D80E-21C5B6E54604">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>D70501F1-1414-80CE-791E-C0E446288928</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SumatoriaCalculos" id="B22A8E6E-5A28-CB84-C668-39C538EE9F40">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>0CF1D660-509C-D8D3-6EA5-972C0D17A094</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PromedioCalculos" id="2E670E22-0CD9-6E79-202D-27CEDAE6044A">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>76077ED9-81C4-26C5-D800-9A27D6EDC64C</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CantidadCalculos" id="CB9CC9ED-4C29-4735-B171-921193C2BD4D">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>269F2CF2-90EA-2D04-65CF-6A702B0F313B</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDUsuario" id="0723491B-95BA-B41D-0035-DC4D0CC64282">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>C21A35B6-E49E-F3BC-BE27-BDC01E0AF077</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="20516291-B1B4-B379-A685-23A26839837C" name="InformeTotal_PK">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>A0237BA0-87F9-A689-5F03-FF3C15103703</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

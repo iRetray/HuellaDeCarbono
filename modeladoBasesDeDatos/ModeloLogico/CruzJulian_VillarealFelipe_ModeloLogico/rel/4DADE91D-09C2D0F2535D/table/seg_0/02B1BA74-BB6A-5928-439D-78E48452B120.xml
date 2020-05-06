@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="02B1BA74-BB6A-5928-439D-78E48452B120" name="Entidad">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:38 UTC</createdTime>
+<generatorID>9933B821-2F5A-0A70-0E2B-9C0D784172C7</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDEntidad" id="09DE6FB6-ACDE-E2FD-E98A-9CF6F9D03729">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:38 UTC</createdTime>
+<generatorID>FB27CAEA-D18F-5FD3-92CD-E6DD602BA856</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="98E08797-608D-9B35-4A7C-F7A3E01A1BF8">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:38 UTC</createdTime>
+<generatorID>81AF7203-8674-D354-6E80-02A487132083</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion" id="DBF2CAB0-1DCF-4170-E1BC-5FCDEDCD0A2C">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:38 UTC</createdTime>
+<generatorID>26733962-E7BA-DCB6-D99F-4EB355EFD0A5</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDUsuario" id="24D802BE-F971-FFE7-5391-D053B940BE71">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:38 UTC</createdTime>
+<generatorID>F9D6889F-0F3B-7A08-CC1E-EDCE374EFF03</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="820ED435-2379-2227-20BA-747FAD193EEC" name="Entidad_PK">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>1A87190B-3823-4965-1931-6A006D18EAF1</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

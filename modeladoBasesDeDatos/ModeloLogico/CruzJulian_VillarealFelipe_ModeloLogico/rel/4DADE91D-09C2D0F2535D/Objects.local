@@ -1,2 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<oracle.dbtools.crest.model.design.relational.RelationalDesign/>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="Table" objectID="02B1BA74-BB6A-5928-439D-78E48452B120" name="Entidad" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="4DADE91D-6949-C2E2-8129-09C2D0F2535D" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="6E16EB85-903E-BC35-2C8D-1397A30CFDF0" name="InformeTotal" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="4DADE91D-6949-C2E2-8129-09C2D0F2535D" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="6A2D7DF3-A17D-35D0-5F04-1E29AD8F35FF" name="Pregunta" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="4DADE91D-6949-C2E2-8129-09C2D0F2535D" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="4681208C-3699-1088-CB89-D13680D26586" name="Respuesta" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="4DADE91D-6949-C2E2-8129-09C2D0F2535D" propertySourceId="" propertyTargetId=""/>
+   <object objectType="Table" objectID="F5F7670A-2F2F-DD35-C5C1-B1F8081E1EA1" name="Usuario" seqName="seg_0" propertyClassName="oracle.dbtools.crest.model.design.relational.Table" propertyParentId="4DADE91D-6949-C2E2-8129-09C2D0F2535D" propertySourceId="" propertyTargetId=""/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

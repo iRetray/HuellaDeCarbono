@@ -1,0 +1,135 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F5F7670A-2F2F-DD35-C5C1-B1F8081E1EA1" name="Usuario">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>DA9C191F-0236-5004-CB2E-1FF4C1BB01C5</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDUsuario" id="EB2398D6-C0D4-1AB5-8CC4-158B33649E02">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>7306846F-886A-295F-14D0-DF4899F48EE1</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Contraseña" id="C361146A-CC8C-0CD5-C4B9-ECB46E5BE6B6">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>7F709FF1-D513-5DDB-65FD-92C074116C92</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TipoUsuario" id="002CB97B-5145-CC7C-02DF-E5BEFCC160D0">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>35A671A4-7936-309F-A8D6-B23CDCA0D7D3</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<domain>373CBB08-F63B-AE22-28DF-DFFD3E2EA02F</domain>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombres" id="A8476C94-D39C-A3D1-ADD7-AFC72964207A">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>8A99B5C3-8BED-FA5B-6A0B-FBF9253D9B54</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ApellidoPaterno" id="A1793E86-5D57-1970-C431-82D48E3FDBFD">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>AF336F74-A741-6247-EB84-14645FD166C2</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ApellidoMaterno" id="86960ECC-F722-1DC6-3F24-ACF8B49A6FA0">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>3D4E884E-3DA0-87A4-2C3C-05369E9C7898</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Edad" id="DF2A4B65-435F-22C8-4FAC-1CFF6D2AF18B">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>B30C98A1-12C0-EE91-35A1-514B47598899</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Correo" id="CA2717F6-E2C1-8F18-A35C-738F7B6459ED">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>BBDCAE3E-8DCF-E401-38C6-6F761FA82938</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="B0FB7E7F-FA63-5D1F-4282-DBD9E654E02D">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>78DD4CE5-F269-7175-88F9-6C7B3C5C7C49</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDEntidad" id="B8311D26-E571-EDA9-8BFF-FA845D7BEBCE">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>1531D3E8-2D49-F80A-AC74-F61EF50C53BA</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="63333CAC-E8AA-F58D-A8BA-D3078CE8BCD3" name="Usuario_PK">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>E87BBF9B-6027-4BBC-2B83-0D1703813086</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>

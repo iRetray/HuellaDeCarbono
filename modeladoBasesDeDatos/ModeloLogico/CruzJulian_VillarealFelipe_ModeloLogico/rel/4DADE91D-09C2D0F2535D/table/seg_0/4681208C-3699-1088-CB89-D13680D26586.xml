@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4681208C-3699-1088-CB89-D13680D26586" name="Respuesta">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>A59197D2-79A8-7387-111A-D837A5E75865</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDRespuesta" id="D967282C-D98A-49C6-2917-BF9B450A930C">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>3C2A2F9C-9D53-FB31-2176-80B501002377</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="5B261EBC-5C5F-3D90-82AB-EB49AFD0895E">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>7F9401F0-110F-DC09-DFEB-0AEE08387686</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ValorRespuesta" id="99D62557-9FD2-F566-E5DA-18FE000D95BE">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>E4826CF5-F0E2-D086-194B-D909169A8857</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDPregunta" id="EDF3B45D-E16F-0F65-2E4B-F42F15B3B7E6">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>0D5AF011-01B0-0CE5-119A-60D01386B0A7</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7F13E0E3-955F-3D1D-1561-3450473BE7F4" name="Respuesta_PK">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-06 17:56:39 UTC</createdTime>
+<generatorID>6399B732-A615-BED8-4DBA-8F72D4596931</generatorID>
+<ownerDesignName>CruzJulian_VillarealFelipe_ModeloLogico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+</indexes>
+</Table>
