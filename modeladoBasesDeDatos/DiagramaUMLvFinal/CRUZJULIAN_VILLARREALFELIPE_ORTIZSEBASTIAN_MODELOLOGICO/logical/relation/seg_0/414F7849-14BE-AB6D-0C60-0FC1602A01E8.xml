@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="RESPRE" directorySegmentName="seg_0" id="414F7849-14BE-AB6D-0C60-0FC1602A01E8">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 18:06:53 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<targetPk>C5C49349-FD20-91F1-615E-628E877817B5</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A59197D2-79A8-7387-111A-D837A5E75865</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>007F125E-1981-B9BB-CCBD-DE091321128F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

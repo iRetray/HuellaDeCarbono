@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO" id="674A9ADB-CA95-0D2A-58F6-F1037F061A87" version="3.5">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 16:22:10 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>674A9ADB-CA95-0D2A-58F6-F1037F061A87</designId>
+</OSDM_Design>

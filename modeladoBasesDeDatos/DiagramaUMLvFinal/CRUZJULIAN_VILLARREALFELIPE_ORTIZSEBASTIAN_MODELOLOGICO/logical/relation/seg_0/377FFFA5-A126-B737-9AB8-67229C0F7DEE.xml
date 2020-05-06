@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="INFCAL" directorySegmentName="seg_0" id="377FFFA5-A126-B737-9AB8-67229C0F7DEE">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 18:06:41 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<sourcePk>A0237BA0-87F9-A689-5F03-FF3C15103703</sourcePk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>BD59C949-1F8C-04C0-3BCA-3340727E5971</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>12396A1E-039C-3245-43F8-9DA7F31914ED</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

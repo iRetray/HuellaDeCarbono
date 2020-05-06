@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9933B821-2F5A-0A70-0E2B-9C0D784172C7" name="Entidad">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 17:39:56 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDEntidad" id="FB27CAEA-D18F-5FD3-92CD-E6DD602BA856">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 17:43:33 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="81AF7203-8674-D354-6E80-02A487132083">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 17:44:42 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="26733962-E7BA-DCB6-D99F-4EB355EFD0A5">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 17:44:51 UTC</createdTime>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDUsuario" id="F9D6889F-0F3B-7A08-CC1E-EDCE374EFF03">
+<createdBy>felipe</createdBy>
+<createdTime>2020-04-20 18:05:25 UTC</createdTime>
+<generatorID>0C384800-3E9E-6537-5A01-E3B8E1DA82DA</generatorID>
+<ownerDesignName>CRUZJULIAN_VILLARREALFELIPE_ORTIZSEBASTIAN_MODELOLOGICO</ownerDesignName>
+<engineerTo>
+<item key="F7FDADB2-3AEB-7DC7-B1CF-866B08FC6B5E" value="true"/>
+</engineerTo>
+<referedAttribute>7306846F-886A-295F-14D0-DF4899F48EE1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>
