@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/estilosPack2.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>  
+    <script src="js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Registro en iFootprint</title>
+</head>
+<body class="gris">
+
+	<!--Barra de navegacion-->
+	<nav class="navbar sticky-top navbar-dark bg-dark sombraNav">
+		<a class="navbar-brand" href="#">
+			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
+			iFootprint
+			<small class="text-muted">PRO</small>
+		</a>
+	</nav>
+
+	<div class="formularioPadre">
+		<div class="jumbotron formulario">
+			<center>
+				<p class="display-4">Registro en iFootprint</p>
+			</center>
+				<br>
+				<form action="registrarDatos.php" method="post" id="formulario" @submit="checkForm">
+					<div class="form-group">
+                        <br>
+                        <label for="correo">Correo electrónico</label>
+                        <b-form-input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="example@email.com"
+                        v-model="correo" :state="estadoCorreo" name="correo"></b-form-input>                       
+                        <small id="emailHelp" class="form-text text-muted">Nunca compartimos tu correo con otras plataformas</small>
+                        <small v-if="errorCorreo" class="text-danger">
+                        	<div class="alert alert-danger">Tienes que ingresar un correo para continuar</div>                            
+                        </small>
+					</div>
+					<div class="form-group">
+                        <br>
+                        <label for="usuario">Nombre de usuario</label>
+                        <b-form-input type="text" class="form-control" id="usuario" placeholder="theWorldKeeper" v-model="usuario" :state="estadoUsuario"></b-form-input>                    
+                        <small id="usuarioHelp" class="form-text text-muted">Tu nombre de usuario debe tener al menos 8 caracteres</small>
+                        <small v-if="errorCorreo" class="text-danger">
+                        	<div class="alert alert-danger">Tienes que ingresar un correo para continuar</div>                            
+                        </small>
+                    </div>
+					<button type="submit" class="btn btn-primary">Ingresar</button>
+				</form>
+		</div>
+	</div>
+
+
+        <!-- Script de verificacion de formulario -->
+        <script>
+            const app = new Vue({
+                el: '#formulario',
+                data: {
+					correo: null,
+					usuario: null,
+					correo: null,
+					clave: null,
+                    errorCorreo: false,
+                    errorClave: false
+                },
+                methods:{
+                    checkForm: function (e) {
+                    if (this.correo && this.clave) {
+                        return true;
+                    }                  
+                
+                    this.errorCorreo = false;
+                    this.errorClave = false;
+
+                    if (!this.correo) {
+                        this.errorCorreo = true;
+                    }
+                    if (!this.clave) {
+                        this.errorClave = true;
+                    }                                        
+
+                    e.preventDefault();
+                    }
+                },
+                computed: {
+                estadoCorreo() {
+                    return this.correo ? true : false
+                },
+                estadoClave() {
+                    return this.clave ? true : false
+				},
+				estadoUsuario() {
+					return this.usuario.length > 4 && this.usuario.length < 13
+                }
+                }
+            })
+        </script>
+
+</body>
+</html>
