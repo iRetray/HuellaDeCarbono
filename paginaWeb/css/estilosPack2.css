@@ -1,0 +1,48 @@
+.generalVertical {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "imagen imagen"
+        "texto1 texto2";
+}
+.generalVertical .imagenV {
+    grid-area: imagen;
+    max-width: 450px;
+    margin: auto;
+}
+.generalVertical .textoV1 {
+    grid-area: texto1;
+}
+.generalVertical .textoV2 {
+    grid-area: texto2;
+}
+
+.banners {
+    -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.6);
+    padding: 30px;
+}
+
+.imgCentrale {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.footerer {
+    background-color: #191919;
+}
+
+/* Configuración para el responsive movil */
+@media screen and (max-width: 800px){
+    .generalVertical {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 65fr 45fr;
+        grid-template-areas:
+            "imagen imagen"
+            "texto1 texto1"
+            "texto2 texto2";
+    }
+}
