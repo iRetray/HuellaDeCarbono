@@ -30,29 +30,89 @@
 			<center>
 				<p class="display-4">Registro en iFootprint</p>
 			</center>
-				<br>
-				<form action="registrarDatos.php" method="post" id="formulario" @submit="checkForm">
+                <br>
+                <!--
+                <form 
+                action="registrarDatos.php" 
+                method="post" id="formulario" 
+                @submit="checkForm" 
+                novalidate="true">
+
 					<div class="form-group">
                         <br>
                         <label for="correo">Correo electrónico</label>
-                        <b-form-input type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="example@email.com"
-                        v-model="correo" :state="estadoCorreo" name="correo"></b-form-input>                       
+
+                        <b-form-input 
+                        type="email" 
+                        class="form-control" 
+                        id="correo" 
+                        aria-describedby="emailHelp" 
+                        placeholder="example@email.com"
+                        v-model="correo" 
+                        :state="correoValido" 
+                        name="correo" 
+                        v-validate.continues="'required|email'">
+                        </b-form-input>      
+
                         <small id="emailHelp" class="form-text text-muted">Nunca compartimos tu correo con otras plataformas</small>
                         <small v-if="errorCorreo" class="text-danger">
                         	<div class="alert alert-danger">Tienes que ingresar un correo para continuar</div>                            
                         </small>
-					</div>
+                    </div>
+                    
 					<div class="form-group">
                         <br>
                         <label for="usuario">Nombre de usuario</label>
-                        <b-form-input type="text" class="form-control" id="usuario" placeholder="theWorldKeeper" v-model="usuario" :state="estadoUsuario"></b-form-input>                    
-                        <small id="usuarioHelp" class="form-text text-muted">Tu nombre de usuario debe tener al menos 8 caracteres</small>
-                        <small v-if="errorCorreo" class="text-danger">
-                        	<div class="alert alert-danger">Tienes que ingresar un correo para continuar</div>                            
+                        <b-form-input type="text" class="form-control" id="usuario" placeholder="theWorldKeeper" v-model="usuario" :state="estadoUsuario"></b-form-input>
+                        <small v-if="!estadoUsuario">
+                            <p class="text-danger">Tu nombre de usuario debe tener al menos 8 caracteres</p>
                         </small>
                     </div>
+                    <div class="form-group">
+                        <br>
+                        <label for="contraseña">Contraseña</label>
+                        <b-form-input type="password" class="form-control" id="contraseña" placeholder="Escribe tu clave" v-model="clave" :state="estadoClave"></b-form-input>                    
+                        <small id="contraseñaHelp" class="form-text text-muted">Tu contraseña debe tener al menos 8 caracteres</small>
+                        <small v-if="erroClave" class="text-danger">
+                        	<div class="alert alert-danger">Tienes que ingresar una contraseña para continuar</div>                            
+                        </small>
+                    </div>
+                
 					<button type="submit" class="btn btn-primary">Ingresar</button>
-				</form>
+                </form>
+                -->
+                
+
+                <form id="app" @submit="checkForm" action="registrarDatos.php" method="post" novalidate="true"> 
+                    
+                    <div class="form-group">
+                        <br>
+                        <label for="correo">Correo electrónico</label>
+
+                        <b-form-input 
+                        type="email" 
+                        class="form-control" 
+                        id="correo" 
+                        aria-describedby="emailHelp" 
+                        placeholder="example@email.com"
+                        v-model="correo" 
+                        :state="correoOK" 
+                        name="correo" 
+                        v-validate.continues="'required|email'">
+                        </b-form-input>      
+
+                        <small v-if="correoVacio" class="text-danger">
+                            <p class="text-danger">Debes ingresar un correo</p>                         
+                        </small>
+                        <small v-if="correoNoValido" class="text-danger">
+                            <p class="text-danger">El correo debe tener un formato de correo</p>                         
+                        </small>
+
+                    </div>
+                  
+                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                  
+                  </form>
 		</div>
 	</div>
 
@@ -60,45 +120,46 @@
         <!-- Script de verificacion de formulario -->
         <script>
             const app = new Vue({
-                el: '#formulario',
-                data: {
-					correo: null,
-					usuario: null,
-					correo: null,
-					clave: null,
-                    errorCorreo: false,
-                    errorClave: false
-                },
-                methods:{
-                    checkForm: function (e) {
-                    if (this.correo && this.clave) {
-                        return true;
-                    }                  
-                
-                    this.errorCorreo = false;
-                    this.errorClave = false;
-
-                    if (!this.correo) {
-                        this.errorCorreo = true;
+            el:'#app',
+            data:{
+                correoVacio: false,
+                correoNoValido: false,
+                correoValido: false,
+                name:null,
+                correo:null,
+                movie:null
+            },
+            methods:{
+                checkForm:function(e) {
+                    this.correoVacio = false;
+                    this.correoNoValido = false;
+                    this.correoValido = false;
+                    if(!this.correo) {
+                        this.correoVacio = true;
+                    } else if(!this.validEmail(this.correo)) {
+                        this.correoNoValido = true;      
+                    } else {
+                        this.correoValido = true;
                     }
-                    if (!this.clave) {
-                        this.errorClave = true;
-                    }                                        
-
+                    if(this.correoValido) return true;
                     e.preventDefault();
+                },
+                validEmail:function(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+                }
+            },
+            computed: {
+                correoOK() {
+                    if(!this.correo) {
+                        return false;
+                    } else if(!this.validEmail(this.correo)) {
+                        return false;      
+                    } else {
+                        return true;
                     }
-                },
-                computed: {
-                estadoCorreo() {
-                    return this.correo ? true : false
-                },
-                estadoClave() {
-                    return this.clave ? true : false
-				},
-				estadoUsuario() {
-					return this.usuario.length > 4 && this.usuario.length < 13
                 }
-                }
+            }
             })
         </script>
 
