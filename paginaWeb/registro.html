@@ -10,6 +10,7 @@
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>  
     <script src="js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Registro en iFootprint</title>
@@ -30,64 +31,13 @@
 			<center>
 				<p class="display-4">Registro en iFootprint</p>
 			</center>
-                <br>
-                <!--
-                <form 
-                action="registrarDatos.php" 
-                method="post" id="formulario" 
-                @submit="checkForm" 
-                novalidate="true">
+                <br>               
 
-					<div class="form-group">
-                        <br>
-                        <label for="correo">Correo electrónico</label>
-
-                        <b-form-input 
-                        type="email" 
-                        class="form-control" 
-                        id="correo" 
-                        aria-describedby="emailHelp" 
-                        placeholder="example@email.com"
-                        v-model="correo" 
-                        :state="correoValido" 
-                        name="correo" 
-                        v-validate.continues="'required|email'">
-                        </b-form-input>      
-
-                        <small id="emailHelp" class="form-text text-muted">Nunca compartimos tu correo con otras plataformas</small>
-                        <small v-if="errorCorreo" class="text-danger">
-                        	<div class="alert alert-danger">Tienes que ingresar un correo para continuar</div>                            
-                        </small>
-                    </div>
-                    
-					<div class="form-group">
-                        <br>
-                        <label for="usuario">Nombre de usuario</label>
-                        <b-form-input type="text" class="form-control" id="usuario" placeholder="theWorldKeeper" v-model="usuario" :state="estadoUsuario"></b-form-input>
-                        <small v-if="!estadoUsuario">
-                            <p class="text-danger">Tu nombre de usuario debe tener al menos 8 caracteres</p>
-                        </small>
-                    </div>
-                    <div class="form-group">
-                        <br>
-                        <label for="contraseña">Contraseña</label>
-                        <b-form-input type="password" class="form-control" id="contraseña" placeholder="Escribe tu clave" v-model="clave" :state="estadoClave"></b-form-input>                    
-                        <small id="contraseñaHelp" class="form-text text-muted">Tu contraseña debe tener al menos 8 caracteres</small>
-                        <small v-if="erroClave" class="text-danger">
-                        	<div class="alert alert-danger">Tienes que ingresar una contraseña para continuar</div>                            
-                        </small>
-                    </div>
-                
-					<button type="submit" class="btn btn-primary">Ingresar</button>
-                </form>
-                -->
-                
-
-                <form id="app" @submit="checkForm" action="registrarDatos.php" method="post" novalidate="true"> 
+                <b-form  @submit.stop.prevent id="app" @submit="checkForm" action="registrarDatos.php" method="post" novalidate="true"> 
                     
                     <div class="form-group">
                         <br>
-                        <label for="correo">Correo electrónico</label>
+                        <label for="correo"><i class="far fa-envelope"></i> Correo electrónico</label>
 
                         <b-form-input 
                         type="email" 
@@ -97,10 +47,12 @@
                         placeholder="example@email.com"
                         v-model="correo" 
                         :state="correoOK" 
-                        name="correo" 
-                        v-validate.continues="'required|email'">
+                        name="correo">
                         </b-form-input>      
 
+                        <b-form-invalid-feedback v-else="correoVacioValidar">
+                            Debes ingresar un correo
+                        </b-form-invalid-feedback>
                         <small v-if="correoVacio" class="text-danger">
                             <p class="text-danger">Debes ingresar un correo</p>                         
                         </small>
@@ -109,10 +61,34 @@
                         </small>
 
                     </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
+
+                        <b-form-input 
+                        type="text" 
+                        class="form-control" 
+                        id="usuario" 
+                        aria-describedby="usuarioHelp" 
+                        placeholder="theWorldKeeper"
+                        v-model="usuario" 
+                        :state="usuarioOK" 
+                        name="usuario">
+                        </b-form-input>      
+
+                        <b-form-invalid-feedback :state="usuarioOK">
+                            El usuario debe tener una longitud de 8 a 15 caracteres
+                        </b-form-invalid-feedback>
+                        <b-form-valid-feedback :state="usuarioOK">
+                            Formato de usuario valido
+                        </b-form-valid-feedback>
+
+                    </div>
                   
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                    <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
-                  </form>
+                  </b-form>
 		</div>
 	</div>
 
@@ -125,15 +101,16 @@
                 correoVacio: false,
                 correoNoValido: false,
                 correoValido: false,
-                name:null,
-                correo:null,
-                movie:null
+                correo: "",
+                usuario: "",
+                usuarioVacio: false,
             },
             methods:{
                 checkForm:function(e) {
                     this.correoVacio = false;
                     this.correoNoValido = false;
                     this.correoValido = false;
+                    
                     if(!this.correo) {
                         this.correoVacio = true;
                     } else if(!this.validEmail(this.correo)) {
@@ -158,6 +135,16 @@
                     } else {
                         return true;
                     }
+                },
+                correoVacioValidar() {
+                    if(!this.correo) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+                usuarioOK() {
+                    return this.usuario.length >= 8 && this.usuario.length <= 15
                 }
             }
             })
