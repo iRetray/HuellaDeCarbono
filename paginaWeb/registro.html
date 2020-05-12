@@ -46,18 +46,15 @@
                         aria-describedby="emailHelp" 
                         placeholder="example@email.com"
                         v-model="correo" 
-                        :state="correoOK" 
+                        :state="esCorreoValido" 
                         name="correo">
-                        </b-form-input>      
+                        </b-form-input>
 
-                        <b-form-invalid-feedback v-else="correoVacioValidar">
-                            Debes ingresar un correo
-                        </b-form-invalid-feedback>
-                        <small v-if="correoVacio" class="text-danger">
-                            <p class="text-danger">Debes ingresar un correo</p>                         
+                        <small v-if="esCorreoVacio">
+                            <p class="text-danger">Debes ingresar un correo</p> 
                         </small>
-                        <small v-if="correoNoValido" class="text-danger">
-                            <p class="text-danger">El correo debe tener un formato de correo</p>                         
+                        <small v-if="esCorreoInvalido">
+                            <p class="text-danger">El correo debe tener un formato de email</p> 
                         </small>
 
                     </div>
@@ -127,7 +124,16 @@
                 }
             },
             computed: {
-                correoOK() {
+                esCorreoInvalido() {
+                    if(!this.correo) {
+                        return false;
+                    } else if(!this.validEmail(this.correo)) {
+                        return true;      
+                    } else {
+                        return false;
+                    }
+                },
+                esCorreoValido() {
                     if(!this.correo) {
                         return false;
                     } else if(!this.validEmail(this.correo)) {
@@ -136,7 +142,7 @@
                         return true;
                     }
                 },
-                correoVacioValidar() {
+                esCorreoVacio() {
                     if(!this.correo) {
                         return true;
                     } else {
