@@ -56,4 +56,9 @@
             "texto1 texto1"
             "texto2 texto2";
     }
+    .formularioPadre {
+        padding-top: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
 }

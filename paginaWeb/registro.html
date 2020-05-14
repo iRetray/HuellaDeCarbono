@@ -6,8 +6,7 @@
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/estilosPack2.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>  
+    <script type="text/javascript" src="js/bootstrap.js"></script> 
     <script src="js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
@@ -82,6 +81,65 @@
                         </b-form-valid-feedback>
 
                     </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label for="contraseña"><i class="fas fa-key"></i> Contraseña</label>
+
+                        <b-form-input 
+                        type="password" 
+                        class="form-control" 
+                        id="contraseña" 
+                        aria-describedby="claveHelp" 
+                        placeholder="Escribe tu contraseña"
+                        v-model="contraseña" 
+                        :state="contraseñaOK" 
+                        name="contraseña">
+                        </b-form-input>   
+
+                        <small v-if="claveLongitud" class="text-danger">
+                            La contraseña debe tener al menos 8 caracteres
+                            <br>
+                        </small>                        
+                        <small v-if="claveMayuscula" class="text-danger">                            
+                            La contraseña debe contener una mayúscula
+                            <br>
+                        </small>                        
+                        <small v-if="claveMinuscula" class="text-danger">
+                            La contraseña debe contener una minúscula
+                            <br>
+                        </small>                        
+                        <small v-if="claveNumero" class="text-danger">
+                            La contraseña debe contener un numero
+                            <br>
+                        </small>                        
+                        <small v-if="claveCaracter" class="text-danger">
+                            La contraseña debe contener un simbolo
+                            <br>
+                        </small>                        
+                        <b-form-valid-feedback :state="usuarioOK">
+                            Tu contraseña cumple con los estandares de seguridad
+                        </b-form-valid-feedback>
+
+                        <b-form-input 
+                        type="password" 
+                        class="form-control" 
+                        id="contraseñaVerificada" 
+                        aria-describedby="claveHelp" 
+                        placeholder="Repite tu contraseña"
+                        v-model="contraseñaVerificada" 
+                        :state="contraseñaIgual" 
+                        name="contraseñaVerificada">
+                        </b-form-input>
+
+                        <small v-if="contraseñaIgual" class="text-success">
+                            Las contraseñas coinciden
+                        </small>
+                        <small v-else="contraseñaIgual" class="text-danger">
+                            Las contraseñas no coinciden
+                        </small>
+
+                    </div>
                   
                     <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
@@ -101,6 +159,8 @@
                 correo: "",
                 usuario: "",
                 usuarioVacio: false,
+                contraseña: "",
+                contraseñaVerificada: ""
             },
             methods:{
                 checkForm:function(e) {
@@ -121,6 +181,40 @@
                 validEmail:function(email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
+                },
+                validarContraseña:function(clave){
+                    if(clave.length >= 8)
+                        {		
+                            var mayuscula = false;
+                            var minuscula = false;
+                            var numero = false;
+                            var caracter_raro = false;
+                            
+                            for(var i = 0;i<clave.length;i++)
+                            {
+                                if(clave.charCodeAt(i) >= 65 && clave.charCodeAt(i) <= 90)
+                                {
+                                    mayuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 97 && clave.charCodeAt(i) <= 122)
+                                {
+                                    minuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 48 && clave.charCodeAt(i) <= 57)
+                                {
+                                    numero = true;
+                                }
+                                else
+                                {
+                                    caracter_raro = true;
+                                }
+                            }
+                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
                 }
             },
             computed: {
@@ -151,7 +245,100 @@
                 },
                 usuarioOK() {
                     return this.usuario.length >= 8 && this.usuario.length <= 15
+                },
+                contraseñaOK() {
+                    if(this.contraseña.length >= 8)
+                        {		
+                            var mayuscula = false;
+                            var minuscula = false;
+                            var numero = false;
+                            var caracter_raro = false;
+                            
+                            for(var i = 0;i<this.contraseña.length;i++)
+                            {
+                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
+                                {
+                                    mayuscula = true;
+                                }
+                                else if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
+                                {
+                                    minuscula = true;
+                                }
+                                else if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
+                                {
+                                    numero = true;
+                                }
+                                else
+                                {
+                                    caracter_raro = true;
+                                }
+                            }
+                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                },
+                claveLongitud() {
+                    return this.contraseña.length < 8
+                },
+                claveMayuscula() {
+                    for(var i = 0;i<this.contraseña.length;i++)
+                            {
+                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
+                                {
+                                    return false;
+                                }                                
+                            }
+                    return true;  
+                },
+                claveMinuscula() {
+                    for(var i = 0;i<this.contraseña.length;i++)
+                            {
+                                if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
+                                {
+                                    return false;
+                                }                                
+                            }
+                    return true; 
+                },
+                claveNumero() {
+                    for(var i = 0;i<this.contraseña.length;i++)
+                            {
+                                if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
+                                {
+                                    return false;
+                                }                                
+                            }
+                    return true; 
+                },
+                claveCaracter(){
+                    for(var i = 0;i<this.contraseña.length;i++)
+                            {
+                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
+                                {
+                                    
+                                }
+                                else if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
+                                {
+                                    
+                                }
+                                else if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
+                                {
+                                    
+                                }
+                                else
+                                {
+                                    return false;
+                                }
+                            }
+                    return true;
+                },
+                contraseñaIgual() {
+                    return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
                 }
+            
             }
             })
         </script>
