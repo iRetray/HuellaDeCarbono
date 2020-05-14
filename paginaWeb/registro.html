@@ -95,27 +95,26 @@
                         v-model="contraseña" 
                         :state="contraseñaOK" 
                         name="contraseña">
-                        </b-form-input>   
+                        </b-form-input>  
+                        
+                        <b-form-invalid-feedback :state="contraseñaOK">
+                            La contraseña debe contener:
+                        </b-form-invalid-feedback>
 
                         <small v-if="claveLongitud" class="text-danger">
-                            La contraseña debe tener al menos 8 caracteres
-                            <br>
+                            <li>Mínimo 8 caracteres</li>
                         </small>                        
-                        <small v-if="claveMayuscula" class="text-danger">                            
-                            La contraseña debe contener una mayúscula
-                            <br>
+                        <small v-if="claveMayuscula" class="text-danger">
+                            <li>Una letra mayúscula</li>                           
                         </small>                        
                         <small v-if="claveMinuscula" class="text-danger">
-                            La contraseña debe contener una minúscula
-                            <br>
+                            <li>Una letra minúscula</li>
                         </small>                        
                         <small v-if="claveNumero" class="text-danger">
-                            La contraseña debe contener un numero
-                            <br>
+                            <li>Un numero</li>
                         </small>                        
                         <small v-if="claveCaracter" class="text-danger">
-                            La contraseña debe contener un simbolo
-                            <br>
+                            <li>Un simbolo</li>
                         </small>                        
                         <b-form-valid-feedback :state="usuarioOK">
                             Tu contraseña cumple con los estandares de seguridad
@@ -140,6 +139,26 @@
                         </small>
 
                     </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label for="tipo"><i class="fas fa-tools"></i> Código para cuentas de entidades</label>
+
+                        <b-form-checkbox type="checkbox" id="checkbox" v-model="checkAdmin">
+                            <small>Soy un administrador de una entidad previamente registrada</small>
+                        </b-form-checkbox>
+
+                        <b-form-input v-show="checkAdmin"
+                        type="text" 
+                        class="form-control" 
+                        id="adminCode"
+                        placeholder="Ingresa el código de tu entidad"
+                        v-model="adminCode" 
+                        :state="adminCodeOK" 
+                        name="adminCode">
+                        </b-form-input>
+
+                    </div>
                   
                     <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
@@ -160,7 +179,9 @@
                 usuario: "",
                 usuarioVacio: false,
                 contraseña: "",
-                contraseñaVerificada: ""
+                contraseñaVerificada: "",
+                checkAdmin: null,
+                adminCode: ""
             },
             methods:{
                 checkForm:function(e) {
@@ -241,6 +262,13 @@
                         return true;
                     } else {
                         return false;
+                    }
+                },
+                adminCodeOK() {
+                    if(!this.adminCode) {
+                        return false;
+                    } else {
+                        return true;
                     }
                 },
                 usuarioOK() {
