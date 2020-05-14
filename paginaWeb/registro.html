@@ -159,6 +159,74 @@
                         </b-form-input>
 
                     </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label for="nombre"><i class="fas fa-id-badge"></i> Nombres</label>
+
+                        <b-form-input
+                        type="text" 
+                        class="form-control" 
+                        id="nombre"
+                        placeholder="Ingresa tu nombre"
+                        v-model="nombre" 
+                        :state="nombreOK" 
+                        name="nombre">
+                        </b-form-input>
+
+                    </div>
+
+                    <div class="form-group">
+                        <br>
+                        <label for="apellidos"><i class="far fa-address-card"></i> Apellidos</label>
+
+                        <b-form-input
+                        type="text" 
+                        class="form-control" 
+                        id="apellidos"
+                        placeholder="Ingresa tus apellidos"
+                        v-model="apellidos" 
+                        :state="apellidosOK" 
+                        name="apellidos">
+                        </b-form-input>
+
+                    </div>
+                    
+                    <div class="form-group">
+                        <br>
+                        <label for="edad"><i class="far fa-address-card"></i> ¿Cuantos años tienes?</label>
+
+                        <b-form-input
+                        type="number" 
+                        class="form-control" 
+                        id="edad"
+                        placeholder="Ingresa edad"
+                        v-model="edad" 
+                        :state="edadNoEntera" 
+                        name="edad">
+                        </b-form-input>
+
+                        <small v-if="edadNoEntera" class="text-danger">
+                            Tu edad debe ser un numero completo
+                        </small>
+
+                    </div> 
+
+                    <div class="form-group">
+                        <br>
+                        <label for="apellidos"><i class="far fa-address-card"></i> Apellidos</label>
+
+                        <b-form-input
+                        type="text" 
+                        class="form-control" 
+                        id="apellidos"
+                        placeholder="Ingresa tus apellidos"
+                        v-model="apellidos" 
+                        :state="apellidosOK" 
+                        name="apellidos">
+                        </b-form-input>
+
+                    </div> 
                   
                     <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
@@ -181,7 +249,10 @@
                 contraseña: "",
                 contraseñaVerificada: "",
                 checkAdmin: null,
-                adminCode: ""
+                adminCode: "",
+                nombre: "",
+                apellidos: "",
+                edad: ""
             },
             methods:{
                 checkForm:function(e) {
@@ -248,6 +319,18 @@
                         return false;
                     }
                 },
+                edadNoEntera() {
+                    for(var i = 0;i<this.edad.length;i++)
+                            {
+                                if(this.edad.charCodeAt(i) >= 48 && this.edad.charCodeAt(i) <= 57)
+                                {
+                                    
+                                } else {
+                                    return false;
+                                }                                
+                            }
+                    return true;
+                },
                 esCorreoValido() {
                     if(!this.correo) {
                         return false;
@@ -256,6 +339,9 @@
                     } else {
                         return true;
                     }
+                },
+                edadOK() {
+                    return this.edad.length != 0 && !edadNoEntera();
                 },
                 esCorreoVacio() {
                     if(!this.correo) {
@@ -266,6 +352,20 @@
                 },
                 adminCodeOK() {
                     if(!this.adminCode) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                },
+                nombreOK() {
+                    if(!this.nombre) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                },
+                apellidosOK() {
+                    if(!this.apellidos) {
                         return false;
                     } else {
                         return true;
