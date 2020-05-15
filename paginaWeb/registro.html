@@ -50,7 +50,8 @@
                         placeholder="example@email.com"
                         v-model="correo" 
                         :state="esCorreoValido" 
-                        name="correo">
+                        name="correo"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="esCorreoVacio">
@@ -74,7 +75,8 @@
                         placeholder="theWorldKeeper"
                         v-model="usuario" 
                         :state="usuarioOK" 
-                        name="usuario">
+                        name="usuario"
+                        autocomplete="off">
                         </b-form-input>      
 
                         <b-form-invalid-feedback :state="usuarioOK">
@@ -98,7 +100,8 @@
                         placeholder="Escribe tu contraseña"
                         v-model="contraseña" 
                         :state="contraseñaOK" 
-                        name="contraseña">
+                        name="contraseña"
+                        autocomplete="off">
                         </b-form-input>  
                         
                         <b-form-invalid-feedback :state="contraseñaOK">
@@ -132,7 +135,8 @@
                         placeholder="Repite tu contraseña"
                         v-model="contraseñaVerificada" 
                         :state="contraseñaIgual" 
-                        name="contraseñaVerificada">
+                        name="contraseñaVerificada"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="contraseñaIgual" class="text-success">
@@ -159,7 +163,8 @@
                         placeholder="Ingresa el código de tu entidad"
                         v-model="adminCode" 
                         :state="adminCodeOK" 
-                        name="adminCode">
+                        name="adminCode"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="adminCodeOK" class="text-success">
@@ -181,7 +186,8 @@
                         placeholder="Ingresa tu nombre"
                         v-model="nombre" 
                         :state="nombreOK" 
-                        name="nombre">
+                        name="nombre"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="nombreOK" class="text-success">
@@ -203,7 +209,8 @@
                         placeholder="Ingresa tus apellidos"
                         v-model="apellidos" 
                         :state="apellidosOK" 
-                        name="apellidos">
+                        name="apellidos"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="apellidosOK" class="text-success">
@@ -225,7 +232,8 @@
                         placeholder="Ingresa tu edad"
                         v-model="edad" 
                         :state="edadEntera" 
-                        name="edad">
+                        name="edad"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="edadEntera" class="text-danger">
@@ -247,7 +255,8 @@
                         placeholder="+57 312 345 6789"
                         v-model="telefono" 
                         :state="telefonoOK" 
-                        name="telefono">
+                        name="telefono"
+                        autocomplete="off">
                         </b-form-input>
 
                         <small v-if="telefonoOK" class="text-danger">
@@ -442,12 +451,16 @@
             },
             methods:{
                 checkForm:function(e) {
-                    esNumero3(this.telefono) = this.formularioCorrecto;
-                    if (this.telefono.length >= 8 && correoValidoFuncion(this.correo)) {
-                        this.formularioCorrecto = true;
-                        document.formRegistro.submit(); 
+                    if (
+                        this.telefono.length>=8 && this.validEmail(this.correo) && 
+                        this.usuario.length>=8 && this.usuario.length<= 15 &&
+                        this.validarContraseña(this.contraseña) && this.contraseña == this.contraseñaVerificada &&
+                        this.nombre.length>=2 && this.apellidos.length>=2 && this.edad%1==0 && this.edad!="" &&
+                        this.telefono.length>=8
+                        ){
+                        document.formRegistro.submit();                                               
                     } else {
-                        this.formularioCorrecto = false;
+                        alert("Faltan cosas");
                     }                 
                 },
                 validEmail:function(email) {
