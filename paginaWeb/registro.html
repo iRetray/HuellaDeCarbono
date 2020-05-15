@@ -10,6 +10,8 @@
     <script src="js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="js/scriptsVerificacion.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -255,8 +257,11 @@
                         </small>
 
                     </div> 
+
+                    <center><div class="g-recaptcha" data-sitekey="6LcB2vcUAAAAACbkHRHqYOjI9q48otOTsppl2jKE"
+                        data-theme="dark"></div></center>
+                    <br>
                   
-                    <input type="submit">
                     <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
                   </b-form>
@@ -281,7 +286,7 @@
                 adminCode: "",
                 nombre: "",
                 apellidos: "",
-                edad: null,
+                edad: "",
                 telefono: "",
                 formularioCorrecto: null
             },
@@ -296,7 +301,7 @@
                     }
                 },
                 edadEntera() {
-                    return this.edad % 1 == 0 && this.edad != "";
+                    return this.edad % 1 == 0 && this.edad.length != 0;
                 },
                 telefonoOK() {
                     return this.telefono.length >= 8;
@@ -437,7 +442,8 @@
             },
             methods:{
                 checkForm:function(e) {
-                    if (this.telefono.length >= 8) {
+                    esNumero3(this.telefono) = this.formularioCorrecto;
+                    if (this.telefono.length >= 8 && correoValidoFuncion(this.correo)) {
                         this.formularioCorrecto = true;
                         document.formRegistro.submit(); 
                     } else {
