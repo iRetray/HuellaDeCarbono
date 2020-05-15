@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Registro en iFootprint</title>
+    <title>Inicio de sesión</title>
 </head>
 <body class="gris">
 
@@ -32,34 +32,11 @@
 	<div class="formularioPadre">
 		<div class="jumbotron formulario">
 			<center>
-				<p class="display-4">Registro en iFootprint</p>               
+				<p class="display-4">Inicio de Sesión</p>
+			</center>              
 
-                <b-form id="app" @submit="checkForm" action="php/registrarDatos.php" method="post" novalidate="true"
-                v-on:submit.prevent="checkForm" name="formRegistro"> 
-                    
-                    <div class="form-group">
-                        <label for="correo"><i class="far fa-envelope"></i> Correo electrónico</label>
-
-                        <b-form-input 
-                        type="email" 
-                        class="form-control" 
-                        id="correo" 
-                        aria-describedby="emailHelp" 
-                        placeholder="example@email.com"
-                        v-model="correo" 
-                        :state="esCorreoValido" 
-                        name="correo"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="esCorreoVacio">
-                            <p class="text-danger">Debes ingresar un correo</p> 
-                        </small>
-                        <small v-if="esCorreoInvalido">
-                            <p class="text-danger">El correo debe tener un formato de email</p> 
-                        </small>
-
-                    </div>
+                <b-form id="app" @submit="checkForm" action="php/iniciarSesion.php" method="post" novalidate="true"
+                v-on:submit.prevent="checkForm" name="formRegistro">                     
 
                     <div class="form-group">
                         <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
