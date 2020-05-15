@@ -18,7 +18,7 @@
 
 	<!--Barra de navegacion-->
 	<nav class="navbar sticky-top navbar-dark bg-dark sombraNav">
-		<a class="navbar-brand" href="#">
+		<a class="navbar-brand" href="index.html">
 			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
 			iFootprint
 			<small class="text-muted">PRO</small>
@@ -86,8 +86,20 @@
 			<div class="banners">
 				<center>
 				<p class="lead text-light">¿Quieres mantener tu historial personalizado?</p>
-				<button class="btn btn-dark" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
-				<button class="btn btn-success" type="submit" onclick="home.index"><i class="fas fa-users"></i> Registrarse</button>
+				<div class="container">
+					<div class="row">
+						<div class="col-sm">
+							<form action="login.html">
+								<button class="btn btn-dark" type="submit"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</button>
+							</form>
+						</div>
+						<div class="col-sm">
+							<form action="registro.html">
+								<button class="btn btn-success" type="submit"><i class="fas fa-users"></i> Registrarse</button>
+							</form>
+						</div>
+					</div>
+				</div>
 				</center>
 			</div>
 		</div>		
