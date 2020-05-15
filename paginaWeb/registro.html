@@ -33,7 +33,8 @@
 			</center>
                 <br>               
 
-                <b-form  @submit.stop.prevent id="app" @submit="checkForm" action="registrarDatos.php" method="post" novalidate="true"> 
+                <b-form id="app" @submit="checkForm" action="php/registrarDatos.php" method="post" novalidate="true"
+                v-on:submit.prevent="onSubmit" name="formRegistro"> 
                     
                     <div class="form-group">
                         <br>
@@ -117,7 +118,7 @@
                         <small v-if="claveCaracter" class="text-danger">
                             <li>Un simbolo</li>
                         </small>                        
-                        <b-form-valid-feedback :state="usuarioOK">
+                        <b-form-valid-feedback :state="contraseñaOK">
                             Tu contraseña cumple con los estandares de seguridad
                         </b-form-valid-feedback>
 
@@ -280,62 +281,8 @@
                 nombre: "",
                 apellidos: "",
                 edad: null,
-                telefono: ""
-            },
-            methods:{
-                checkForm:function(e) {
-                    this.correoVacio = false;
-                    this.correoNoValido = false;
-                    this.correoValido = false;
-                    
-                    if(!this.correo) {
-                        this.correoVacio = true;
-                    } else if(!this.validEmail(this.correo)) {
-                        this.correoNoValido = true;      
-                    } else {
-                        this.correoValido = true;
-                    }
-                    if(this.correoValido) return true;
-                    e.preventDefault();
-                },
-                validEmail:function(email) {
-                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(email);
-                },
-                validarContraseña:function(clave){
-                    if(clave.length >= 8)
-                        {		
-                            var mayuscula = false;
-                            var minuscula = false;
-                            var numero = false;
-                            var caracter_raro = false;
-                            
-                            for(var i = 0;i<clave.length;i++)
-                            {
-                                if(clave.charCodeAt(i) >= 65 && clave.charCodeAt(i) <= 90)
-                                {
-                                    mayuscula = true;
-                                }
-                                else if(clave.charCodeAt(i) >= 97 && clave.charCodeAt(i) <= 122)
-                                {
-                                    minuscula = true;
-                                }
-                                else if(clave.charCodeAt(i) >= 48 && clave.charCodeAt(i) <= 57)
-                                {
-                                    numero = true;
-                                }
-                                else
-                                {
-                                    caracter_raro = true;
-                                }
-                            }
-                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
-                            {
-                                return true;
-                            }
-                        }
-                        return false;
-                }
+                telefono: "",
+                formularioCorrecto: null
             },
             computed: {
                 esCorreoInvalido() {
@@ -489,6 +436,52 @@
                     return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
                 }
             
+            },
+            methods:{
+                checkForm:function(e) {
+                    e.preventDefault();
+                    if (this.correo) {
+                        document.formRegistro.submit(); 
+                    }                    
+                },
+                validEmail:function(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+                },
+                validarContraseña:function(clave){
+                    if(clave.length >= 8)
+                        {		
+                            var mayuscula = false;
+                            var minuscula = false;
+                            var numero = false;
+                            var caracter_raro = false;
+                            
+                            for(var i = 0;i<clave.length;i++)
+                            {
+                                if(clave.charCodeAt(i) >= 65 && clave.charCodeAt(i) <= 90)
+                                {
+                                    mayuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 97 && clave.charCodeAt(i) <= 122)
+                                {
+                                    minuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 48 && clave.charCodeAt(i) <= 57)
+                                {
+                                    numero = true;
+                                }
+                                else
+                                {
+                                    caracter_raro = true;
+                                }
+                            }
+                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                }
             }
             })
         </script>
