@@ -20,8 +20,8 @@ $consulta = "INSERT INTO `usuario`
 (`contraseña`, `tipoDeUsuario`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
 VALUES ('$contraseña','$tipoUsuario','$nombre','$apellidos','$edad','$correo','$telefono')";
 if (mysqli_query($conexion, $consulta)) {
-    echo ("Usuario registrado");
+    header("Location:../confirmacionRegistro.html");
 } else {
-      echo "Error: " . $consulta . "<br>" . mysqli_error($conexion);
+    header("Location:../errorRegistro.html");
 }
 ?>
