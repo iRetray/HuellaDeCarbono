@@ -9,6 +9,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script> 
     <script src="js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -146,7 +147,7 @@
 
                         <b-form-checkbox type="checkbox" id="checkbox" v-model="checkAdmin">
                             <small>Soy un administrador de una entidad previamente registrada</small>
-                        </b-form-checkbox>
+                        </b-form-checkbox>                        
 
                         <b-form-input v-show="checkAdmin"
                         type="text" 
@@ -157,6 +158,12 @@
                         :state="adminCodeOK" 
                         name="adminCode">
                         </b-form-input>
+
+                        <small v-if="adminCodeOK" class="text-success">
+                        </small>
+                        <small v-else="adminCodeOK" class="text-danger" v-show="checkAdmin">
+                            Ingresa el código de tu entidad
+                        </small>
 
                     </div>
 
@@ -174,6 +181,12 @@
                         name="nombre">
                         </b-form-input>
 
+                        <small v-if="nombreOK" class="text-success">
+                        </small>
+                        <small v-else="nombreOK" class="text-danger">
+                            Debes ingresar tu nombre
+                        </small>
+
                     </div>
 
                     <div class="form-group">
@@ -189,6 +202,12 @@
                         :state="apellidosOK" 
                         name="apellidos">
                         </b-form-input>
+
+                        <small v-if="apellidosOK" class="text-success">
+                        </small>
+                        <small v-else="apellidosOK" class="text-danger">
+                            Debes ingresar tus apellidos
+                        </small>
 
                     </div>
                     
@@ -200,13 +219,15 @@
                         type="number" 
                         class="form-control" 
                         id="edad"
-                        placeholder="Ingresa edad"
+                        placeholder="Ingresa tu edad"
                         v-model="edad" 
-                        :state="edadNoEntera" 
+                        :state="edadEntera" 
                         name="edad">
                         </b-form-input>
 
-                        <small v-if="edadNoEntera" class="text-danger">
+                        <small v-if="edadEntera" class="text-danger">
+                        </small>
+                        <small v-else="edadEntera" class="text-danger">
                             Tu edad debe ser un numero completo
                         </small>
 
@@ -214,17 +235,23 @@
 
                     <div class="form-group">
                         <br>
-                        <label for="apellidos"><i class="far fa-address-card"></i> Apellidos</label>
+                        <label for="telefono"><i class="fas fa-mobile-alt"></i> Número de telefono</label>
 
                         <b-form-input
-                        type="text" 
+                        type="number" 
                         class="form-control" 
-                        id="apellidos"
-                        placeholder="Ingresa tus apellidos"
-                        v-model="apellidos" 
-                        :state="apellidosOK" 
-                        name="apellidos">
+                        id="telefono"
+                        placeholder="+57 312 345 6789"
+                        v-model="telefono" 
+                        :state="telefonoOK" 
+                        name="telefono">
                         </b-form-input>
+
+                        <small v-if="telefonoOK" class="text-danger">
+                        </small>
+                        <small v-else="telefonoOK" class="text-danger">
+                            El telefono debe tener al menos 8 numeros
+                        </small>
 
                     </div> 
                   
@@ -252,7 +279,8 @@
                 adminCode: "",
                 nombre: "",
                 apellidos: "",
-                edad: ""
+                edad: null,
+                telefono: ""
             },
             methods:{
                 checkForm:function(e) {
@@ -319,17 +347,11 @@
                         return false;
                     }
                 },
-                edadNoEntera() {
-                    for(var i = 0;i<this.edad.length;i++)
-                            {
-                                if(this.edad.charCodeAt(i) >= 48 && this.edad.charCodeAt(i) <= 57)
-                                {
-                                    
-                                } else {
-                                    return false;
-                                }                                
-                            }
-                    return true;
+                edadEntera() {
+                    return this.edad % 1 == 0;
+                },
+                telefonoOK() {
+                    return this.telefono.length >= 8;
                 },
                 esCorreoValido() {
                     if(!this.correo) {
