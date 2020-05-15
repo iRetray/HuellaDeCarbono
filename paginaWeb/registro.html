@@ -34,7 +34,7 @@
                 <br>               
 
                 <b-form id="app" @submit="checkForm" action="php/registrarDatos.php" method="post" novalidate="true"
-                v-on:submit.prevent="onSubmit" name="formRegistro"> 
+                v-on:submit.prevent="checkForm" name="formRegistro"> 
                     
                     <div class="form-group">
                         <br>
@@ -256,6 +256,7 @@
 
                     </div> 
                   
+                    <input type="submit">
                     <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
                   
                   </b-form>
@@ -295,7 +296,7 @@
                     }
                 },
                 edadEntera() {
-                    return this.edad % 1 == 0;
+                    return this.edad % 1 == 0 && this.edad != "";
                 },
                 telefonoOK() {
                     return this.telefono.length >= 8;
@@ -308,9 +309,6 @@
                     } else {
                         return true;
                     }
-                },
-                edadOK() {
-                    return this.edad.length != 0 && !edadNoEntera();
                 },
                 esCorreoVacio() {
                     if(!this.correo) {
@@ -439,10 +437,12 @@
             },
             methods:{
                 checkForm:function(e) {
-                    e.preventDefault();
-                    if (this.correo) {
+                    if (this.telefono.length >= 8) {
+                        this.formularioCorrecto = true;
                         document.formRegistro.submit(); 
-                    }                    
+                    } else {
+                        this.formularioCorrecto = false;
+                    }                 
                 },
                 validEmail:function(email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
