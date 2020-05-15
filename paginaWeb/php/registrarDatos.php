@@ -1,5 +1,6 @@
 <?php
 require("conexion.php");
+
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
@@ -9,13 +10,18 @@ $apellidos = $_POST['apellidos'];
 $edad = $_POST['edad'];
 $telefono = $_POST['telefono'];
 
-echo ($correo);
-echo ($usuario);
-echo ($contraseña);
-echo ($adminCode);
-echo ($nombre);
-echo ($apellidos);
-echo ($edad);
-echo ($telefono);
+if($adminCode=="12d68c") {
+    $tipoUsuario = "admin";
+} else {
+    $tipoUsuario = "user";
+}
 
+$consulta = "INSERT INTO `usuario`
+(`contraseña`, `tipoDeUsuario`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
+VALUES ('$contraseña','$tipoUsuario','$nombre','$apellidos','$edad','$correo','$telefono')";
+if (mysqli_query($conexion, $consulta)) {
+    echo ("Usuario registrado");
+} else {
+      echo "Error: " . $consulta . "<br>" . mysqli_error($conexion);
+}
 ?>
