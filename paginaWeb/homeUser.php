@@ -14,6 +14,10 @@
 	$correo = $_SESSION['correo'];
     $telefono = $_SESSION['telefono'];
     $entidad = $_SESSION['entidad'];
+
+    if ($nombre=="") {
+        header("Location:index.html");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
