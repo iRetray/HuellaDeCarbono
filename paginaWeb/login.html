@@ -13,6 +13,7 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript" src="js/scriptsVerificacion.js"></script>
+    <link rel="stylesheet" href="css/estiloSlider.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -36,9 +37,48 @@
 			</center>              
 
                 <b-form id="app" @submit="checkForm" action="php/iniciarSesion.php" method="post" novalidate="true"
-                v-on:submit.prevent="checkForm" name="formRegistro">                     
+                v-on:submit.prevent="checkForm" name="formRegistro"> 
+                
+                <center>
+                    <p class="lead">Autenticarme con mi correo</p>
+                </center> 
+                <center>
+                <label class="switch">
+                    <input type="checkbox"
+                    v-model="conCorreo">
+                    <span class="slider round"></span>
+                </label>
+                </center>
 
-                    <div class="form-group">
+                
+                <br>
+
+
+                    <div class="form-group" v-if="conCorreo">
+                        <label for="correo"><i class="far fa-envelope"></i> Correo electrónico</label>
+
+                        <b-form-input 
+                        type="email" 
+                        class="form-control" 
+                        id="correo" 
+                        aria-describedby="emailHelp" 
+                        placeholder="example@email.com"
+                        v-model="correo" 
+                        :state="esCorreoValido" 
+                        name="correo"
+                        autocomplete="off">
+                        </b-form-input>
+
+                        <small v-if="esCorreoVacio">
+                            <p class="text-danger">Debes ingresar un correo</p> 
+                        </small>
+                        <small v-if="esCorreoInvalido">
+                            <p class="text-danger">El correo debe tener un formato de email</p> 
+                        </small>
+
+                    </div>
+
+                    <div class="form-group" v-else>
                         <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
 
                         <b-form-input 
@@ -75,171 +115,21 @@
                         :state="contraseñaOK" 
                         name="contraseña"
                         autocomplete="off">
-                        </b-form-input>  
-                        
-                        <b-form-invalid-feedback :state="contraseñaOK">
-                            La contraseña debe contener:
-                        </b-form-invalid-feedback>
-
-                        <small v-if="claveLongitud" class="text-danger">
-                            <li>Mínimo 8 caracteres</li>
-                        </small>                        
-                        <small v-if="claveMayuscula" class="text-danger">
-                            <li>Una letra mayúscula</li>                           
-                        </small>                        
-                        <small v-if="claveMinuscula" class="text-danger">
-                            <li>Una letra minúscula</li>
-                        </small>                        
-                        <small v-if="claveNumero" class="text-danger">
-                            <li>Un numero</li>
-                        </small>                        
-                        <small v-if="claveCaracter" class="text-danger">
-                            <li>Un simbolo</li>
-                        </small>                        
-                        <b-form-valid-feedback :state="contraseñaOK">
-                            Tu contraseña cumple con los estandares de seguridad
-                        </b-form-valid-feedback>
-
-                        <b-form-input 
-                        type="password" 
-                        class="form-control" 
-                        id="contraseñaVerificada" 
-                        aria-describedby="claveHelp" 
-                        placeholder="Repite tu contraseña"
-                        v-model="contraseñaVerificada" 
-                        :state="contraseñaIgual" 
-                        name="contraseñaVerificada"
-                        autocomplete="off">
                         </b-form-input>
 
-                        <small v-if="contraseñaIgual" class="text-success">
-                            Las contraseñas coinciden
+                        <small v-if="contraseñaOK">
                         </small>
-                        <small v-else="contraseñaIgual" class="text-danger">
-                            Las contraseñas no coinciden
+                        <small v-else>
+                            <p class="text-danger">Las contraseñas tienen al menos 8 caracteres</p> 
                         </small>
 
                     </div>
-
-                    <div class="form-group">
-                        <label for="tipo"><i class="fas fa-tools"></i> Código para cuentas de entidades</label>
-
-                        <b-form-checkbox type="checkbox" id="checkbox" v-model="checkAdmin">
-                            <small>Soy un administrador de una entidad previamente registrada</small>
-                        </b-form-checkbox>                        
-
-                        <b-form-input v-show="checkAdmin"
-                        type="text" 
-                        class="form-control" 
-                        id="adminCode"
-                        placeholder="Ingresa el código de tu entidad"
-                        v-model="adminCode" 
-                        :state="adminCodeOK" 
-                        name="adminCode"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="adminCodeOK" class="text-success">
-                        </small>
-                        <small v-else="adminCodeOK" class="text-danger" v-show="checkAdmin">
-                            Ingresa el código de tu entidad
-                        </small>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="nombre"><i class="fas fa-id-badge"></i> Nombres</label>
-
-                        <b-form-input
-                        type="text" 
-                        class="form-control" 
-                        id="nombre"
-                        placeholder="Ingresa tu nombre"
-                        v-model="nombre" 
-                        :state="nombreOK" 
-                        name="nombre"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="nombreOK" class="text-success">
-                        </small>
-                        <small v-else="nombreOK" class="text-danger">
-                            Debes ingresar tu nombre
-                        </small>
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="apellidos"><i class="far fa-address-card"></i> Apellidos</label>
-
-                        <b-form-input
-                        type="text" 
-                        class="form-control" 
-                        id="apellidos"
-                        placeholder="Ingresa tus apellidos"
-                        v-model="apellidos" 
-                        :state="apellidosOK" 
-                        name="apellidos"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="apellidosOK" class="text-success">
-                        </small>
-                        <small v-else="apellidosOK" class="text-danger">
-                            Debes ingresar tus apellidos
-                        </small>
-
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edad"><i class="far fa-address-card"></i> ¿Cuantos años tienes?</label>
-
-                        <b-form-input
-                        type="number" 
-                        class="form-control" 
-                        id="edad"
-                        placeholder="Ingresa tu edad"
-                        v-model="edad" 
-                        :state="edadEntera" 
-                        name="edad"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="edadEntera" class="text-danger">
-                        </small>
-                        <small v-else="edadEntera" class="text-danger">
-                            Tu edad debe ser un numero completo
-                        </small>
-
-                    </div> 
-
-                    <div class="form-group">
-                        <label for="telefono"><i class="fas fa-mobile-alt"></i> Número de telefono</label>
-
-                        <b-form-input
-                        type="number" 
-                        class="form-control" 
-                        id="telefono"
-                        placeholder="+57 312 345 6789"
-                        v-model="telefono" 
-                        :state="telefonoOK" 
-                        name="telefono"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="telefonoOK" class="text-danger">
-                        </small>
-                        <small v-else="telefonoOK" class="text-danger">
-                            El telefono debe tener al menos 8 numeros
-                        </small>
-
-                    </div> 
 
                     <center><div class="g-recaptcha" data-sitekey="6LcB2vcUAAAAACbkHRHqYOjI9q48otOTsppl2jKE"
                         data-theme="dark"></div></center>
                     <br>
                   
-                    <center><button type="submit" class="btn btn-primary">Registrarse</button></center>
+                    <center><button type="submit" class="btn btn-primary">Iniciar Sesión</button></center>
                   
                   </b-form>
 		</div>
@@ -251,38 +141,12 @@
             const app = new Vue({
             el:'#app',
             data:{
-                correoVacio: false,
-                correoNoValido: false,
-                correoValido: false,
+                conCorreo: false,
                 correo: "",
                 usuario: "",
-                usuarioVacio: false,
-                contraseña: "",
-                contraseñaVerificada: "",
-                checkAdmin: null,
-                adminCode: "",
-                nombre: "",
-                apellidos: "",
-                edad: "",
-                telefono: "",
-                formularioCorrecto: null
+                contraseña: ""
             },
-            computed: {
-                esCorreoInvalido() {
-                    if(!this.correo) {
-                        return false;
-                    } else if(!this.validEmail(this.correo)) {
-                        return true;      
-                    } else {
-                        return false;
-                    }
-                },
-                edadEntera() {
-                    return this.edad % 1 == 0 && this.edad.length != 0;
-                },
-                telefonoOK() {
-                    return this.telefono.length >= 8;
-                },
+            computed: {                
                 esCorreoValido() {
                     if(!this.correo) {
                         return false;
@@ -299,141 +163,48 @@
                         return false;
                     }
                 },
-                adminCodeOK() {
-                    if(!this.adminCode) {
+                esCorreoInvalido() {
+                    if(!this.correo) {
                         return false;
+                    } else if(!this.validEmail(this.correo)) {
+                        return true;      
                     } else {
-                        return true;
-                    }
-                },
-                nombreOK() {
-                    if(!this.nombre) {
                         return false;
-                    } else {
-                        return true;
-                    }
-                },
-                apellidosOK() {
-                    if(!this.apellidos) {
-                        return false;
-                    } else {
-                        return true;
                     }
                 },
                 usuarioOK() {
-                    return this.usuario.length >= 8 && this.usuario.length <= 15
+                    if (this.usuario==null) {
+                        return false;
+                    } else {
+                        if (this.usuario.length >= 8 && this.usuario.length <= 15) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
                 },
                 contraseñaOK() {
                     if(this.contraseña.length >= 8)
                         {		
-                            var mayuscula = false;
-                            var minuscula = false;
-                            var numero = false;
-                            var caracter_raro = false;
-                            
-                            for(var i = 0;i<this.contraseña.length;i++)
-                            {
-                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
-                                {
-                                    mayuscula = true;
-                                }
-                                else if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
-                                {
-                                    minuscula = true;
-                                }
-                                else if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
-                                {
-                                    numero = true;
-                                }
-                                else
-                                {
-                                    caracter_raro = true;
-                                }
-                            }
-                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
-                            {
-                                return true;
-                            }
+                            return true;
                         }
                         return false;
-                },
-                claveLongitud() {
-                    return this.contraseña.length < 8
-                },
-                claveMayuscula() {
-                    for(var i = 0;i<this.contraseña.length;i++)
-                            {
-                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
-                                {
-                                    return false;
-                                }                                
-                            }
-                    return true;  
-                },
-                claveMinuscula() {
-                    for(var i = 0;i<this.contraseña.length;i++)
-                            {
-                                if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
-                                {
-                                    return false;
-                                }                                
-                            }
-                    return true; 
-                },
-                claveNumero() {
-                    for(var i = 0;i<this.contraseña.length;i++)
-                            {
-                                if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
-                                {
-                                    return false;
-                                }                                
-                            }
-                    return true; 
-                },
-                claveCaracter(){
-                    for(var i = 0;i<this.contraseña.length;i++)
-                            {
-                                if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
-                                {
-                                    
-                                }
-                                else if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
-                                {
-                                    
-                                }
-                                else if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
-                                {
-                                    
-                                }
-                                else
-                                {
-                                    return false;
-                                }
-                            }
-                    return true;
-                },
-                contraseñaIgual() {
-                    return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
                 }
-            
             },
             methods:{
                 checkForm:function(e) {
                     if (
-                        this.telefono.length>=8 && this.validEmail(this.correo) && 
-                        this.usuario.length>=8 && this.usuario.length<= 15 &&
-                        this.validarContraseña(this.contraseña) && this.contraseña == this.contraseñaVerificada &&
-                        this.nombre.length>=2 && this.apellidos.length>=2 && this.edad%1==0 && this.edad!="" &&
-                        this.telefono.length>=8
-                        ){
-                        document.formRegistro.submit();                                               
+                        (this.validEmail(this.correo) && this.contraseña.length>=8) ||
+                        (this.usuario.length>=8 && this.usuario.length<= 15 && this.contraseña.length>=8)
+                         ){
+                        document.formRegistro.submit();
                     } else {
                         Swal.fire({
                         icon: 'error',
-                        title: 'Registro incorrecto',
-                        text: 'Debes completar todos los campos'
+                        title: 'Datos incompletos',
+                        text: 'Debes completar todos los campos para iniciar sesión'
                         })
-                    }                 
+                    }                
                 },
                 validEmail:function(email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
