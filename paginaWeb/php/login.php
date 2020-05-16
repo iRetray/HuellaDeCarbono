@@ -9,6 +9,10 @@ $consulta = "SELECT * FROM `usuario`";
 $resultado = mysqli_query($conexion, $consulta);
 $tipoUsuario = "";
 $nombre = "";
+$apellido = "";
+$edad = "";
+$correo = "";
+$telefono = "";
 $usuarioEncontrado = false;
 $claveCorrecta = false;
 while ($columna = mysqli_fetch_array( $resultado ))
@@ -18,6 +22,10 @@ while ($columna = mysqli_fetch_array( $resultado ))
 		if ($columna['contraseña']==$contraseña) {
 			$tipoUsuario = $columna['tipoDeUsuario'];
 			$nombre = $columna['nombres'];
+			$apellido = $columna['apellidos'];
+			$edad = $columna['edad'];
+			$correo = $columna['correo'];
+			$telefono = $columna['telefono'];
 			$claveCorrecta = true;
 			}
         }
@@ -26,6 +34,10 @@ while ($columna = mysqli_fetch_array( $resultado ))
 		if ($columna['contraseña']==$contraseña) {
 			$tipoUsuario = $columna['tipoDeUsuario'];
 			$nombre = $columna['nombres'];
+			$apellido = $columna['apellidos'];
+			$edad = $columna['edad'];
+			$correo = $columna['correo'];
+			$telefono = $columna['telefono'];
 			$claveCorrecta = true;		
 			}
         }
@@ -36,7 +48,12 @@ if ($usuarioEncontrado && $claveCorrecta) {
     session_start();
     $_SESSION['nombre'] = $nombre;
     $_SESSION['usuario'] = $usuario;
-    $_SESSION['tipoUsuario'] = $tipoUsuario;
+	$_SESSION['tipoUsuario'] = $tipoUsuario;
+	$_SESSION['apellido'] = $apellido;
+	$_SESSION['edad'] = $edad;
+	$_SESSION['correo'] = $correo;
+	$_SESSION['telefono'] = $telefono;
+
 	switch ($tipoUsuario) {
 		case 1:
 			header("Location:../homeAdmin.php");

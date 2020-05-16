@@ -1,6 +1,18 @@
 <?php
+    session_start();
     $nombre = $_SESSION['nombre'];  
     $usuario = $_SESSION['usuario'];
+    $tipoUsuario = $_SESSION['tipoUsuario'];
+    if ($tipoUsuario==1) {
+        $tipo = "Administrador de entidad";
+    } else {
+        $tipo = "Usuario standard";
+    }
+    
+	$apellido = $_SESSION['apellido'];
+	$edad = $_SESSION['edad'];
+	$correo = $_SESSION['correo'];
+	$telefono = $_SESSION['telefono'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,6 +30,8 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="text/javascript" src="js/scriptsVerificacion.js"></script>
     <link rel="stylesheet" href="css/estiloSlider.css">
+    <link rel="stylesheet" href="css/estilosHome.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -26,27 +40,92 @@
 <body class="gris">
 
 	<!--Barra de navegacion-->
-	<nav class="navbar sticky-top navbar-dark bg-dark sombraNav" href="index.html">
+	<nav class="navbar sticky-top navbar-dark bg-dark" href="index.html">
 		<a class="navbar-brand" href="index.html">
 			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
 			iFootprint
 			<small class="text-muted">PRO</small>
-		</a>
+        </a>
+        <form class="form-inline" action="cerrarSesion.php">
+			<button class="btn btn-danger" type="submit"><i class="fas fa-door-open"></i> Cerrar sesión</button>
+			</div>
+		</form>
 	</nav>
+<div id="appVue" class="padreHome">
 
-	
+
+<div class="jumbotron">
+    <h1>{{ nombre }} <span class="badge badge-primary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
+    Ver mis datos personales<br>
+    <label class="switch">
+        <input type="checkbox"
+        v-model="conCorreo">
+        <span class="slider round"></span>
+    </label>
+    <div v-if="isChecked">
+        <div class="alert alert-secondary" role="alert">
+            <h4>{{ nombre }} {{ apellido }}</h4>
+            <small>{{ tipoUsuario }}</small>
+            <p><strong>Nombre de usuario: </strong> {{ usuario }}<br>
+            <strong>Edad: </strong> {{ edad }}<br>
+            <strong>Correo electrónico: </strong> {{ correo }}<br>
+            <strong>Teléfono: </strong> {{ telefono }}</p>
+        </div> 
+    </div>
+    
+    <hr class="my-4">
+    <p class="lead">Bienvenido! Esta es tu plataforma de inicio en <strong>iFootprint</strong></p>
+    <div class="alert alert-primary" role="alert">
+        <center>
+    <i class="fas fa-exclamation-triangle"></i> Ahora podrás realizar <strong>calculos de tu huella de carbono</strong>, y estos quedarán guardados en tu <strong>historial</strong>.
+    </center>    
+</div>
+    <div class="alert alert-success" role="alert">
+        <center>
+    <i class="fas fa-question-circle"></i> ¡Vaya! <strong>Detectamos que aún no has realizado tu primer examen<br><br>
+    <button type="button" class="btn btn-success"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
+    </center>
+    </div>
+</div>
+
+
+</div>
 
 
         <!-- Script -->
         <script>
             const app = new Vue({
-            el:'#app',
+            el:'#appVue',
             data:{
-                
+                conCorreo: false                
             },
-            computed: {                
-                nombreUsuario() {
+            computed: {
+                noTieneCalculos() {
+
+                },
+                isChecked() {
+                    return this.conCorreo;
+                },
+                nombre() {
                     return "<?php echo $nombre; ?>";
+                },
+                apellido() {
+                    return "<?php echo $apellido; ?>";
+                },
+                usuario() {
+                    return "<?php echo $usuario; ?>";
+                },
+                tipoUsuario() {
+                    return "<?php echo $tipo; ?>";
+                },
+                edad() {
+                    return "<?php echo $edad; ?>";
+                },
+                correo() {
+                    return "<?php echo $correo; ?>";
+                },
+                telefono() {
+                    return "<?php echo $telefono; ?>";
                 }
             },
             methods:{
