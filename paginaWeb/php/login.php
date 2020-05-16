@@ -1,7 +1,7 @@
 <?php
 require("conexion.php");
 
-$correo = $_POST['correo'];
+$correoLogin = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 
@@ -13,11 +13,12 @@ $apellido = "";
 $edad = "";
 $correo = "";
 $telefono = "";
+$entidad = "";
 $usuarioEncontrado = false;
 $claveCorrecta = false;
 while ($columna = mysqli_fetch_array( $resultado ))
 {
-	if ($columna['correo']==$correo) {
+	if ($columna['correo']==$correoLogin) {
 		$usuarioEncontrado = true;
 		if ($columna['contraseña']==$contraseña) {
 			$tipoUsuario = $columna['tipoDeUsuario'];
@@ -26,6 +27,7 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$edad = $columna['edad'];
 			$correo = $columna['correo'];
 			$telefono = $columna['telefono'];
+			$entidad = $columna['entidad'];
 			$claveCorrecta = true;
 			}
         }
@@ -38,6 +40,7 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$edad = $columna['edad'];
 			$correo = $columna['correo'];
 			$telefono = $columna['telefono'];
+			$entidad = $columna['entidad'];
 			$claveCorrecta = true;		
 			}
         }
@@ -53,6 +56,7 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['edad'] = $edad;
 	$_SESSION['correo'] = $correo;
 	$_SESSION['telefono'] = $telefono;
+	$_SESSION['entidad'] = $entidad;
 
 	switch ($tipoUsuario) {
 		case 1:

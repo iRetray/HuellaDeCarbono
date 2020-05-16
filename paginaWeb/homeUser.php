@@ -12,7 +12,8 @@
 	$apellido = $_SESSION['apellido'];
 	$edad = $_SESSION['edad'];
 	$correo = $_SESSION['correo'];
-	$telefono = $_SESSION['telefono'];
+    $telefono = $_SESSION['telefono'];
+    $entidad = $_SESSION['entidad'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,8 +56,16 @@
 
 
 <div class="jumbotron">
-    <h1>{{ nombre }} <span class="badge badge-primary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
-    Ver mis datos personales<br>
+    <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
+    <div v-if="hayOrganizacion">
+        {{ organizacion }}
+    </div>
+    <div v-else>
+        No perteneces a ninguna organización.
+        <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-sign-in-alt"></i> Unirme ahora</button>
+    </div>
+    <hr class="my-4">
+    <small class="text-muted">Ver mis datos personales</small><br>
     <label class="switch">
         <input type="checkbox"
         v-model="conCorreo">
@@ -65,6 +74,9 @@
     <div v-if="isChecked">
         <div class="alert alert-secondary" role="alert">
             <h4>{{ nombre }} {{ apellido }}</h4>
+            <p v-if="hayOrganizacion"><i class="fas fa-university"></i> Organización: {{ organizacion }}</p>
+            <p v-else><i class="fas fa-university"></i> Organización: Ninguna</p>
+            
             <small>{{ tipoUsuario }}</small>
             <p><strong>Nombre de usuario: </strong> {{ usuario }}<br>
             <strong>Edad: </strong> {{ edad }}<br>
@@ -126,6 +138,12 @@
                 },
                 telefono() {
                     return "<?php echo $telefono; ?>";
+                },
+                organizacion() {
+                    return "<?php echo $entidad; ?>";
+                },
+                hayOrganizacion() {
+                    return "<?php echo $entidad; ?>".lenght == 0;
                 }
             },
             methods:{
