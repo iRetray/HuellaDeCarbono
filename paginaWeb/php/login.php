@@ -39,10 +39,10 @@ if ($usuarioEncontrado && $claveCorrecta) {
     $_SESSION['tipoUsuario'] = $tipoUsuario;
 	switch ($tipoUsuario) {
 		case 1:
-			header("Location:../home/homeAdmin.html");
+			header("Location:../homeAdmin.php");
 			break;
-		case 2:
-			header("Location:../home/homeUser.html");
+		case 0:
+			header("Location:../homeUser.php");
 			break;
 	}
 } else{

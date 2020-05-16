@@ -11,14 +11,14 @@ $edad = $_POST['edad'];
 $telefono = $_POST['telefono'];
 
 if($adminCode=="12d68c") {
-    $tipoUsuario = "admin";
+    $tipoUsuario = "1";
 } else {
-    $tipoUsuario = "user";
+    $tipoUsuario = "0";
 }
 
 $consulta = "INSERT INTO `usuario`
-(`contraseña`, `tipoDeUsuario`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
-VALUES ('$contraseña','$tipoUsuario','$nombre','$apellidos','$edad','$correo','$telefono')";
+(`usuario`, `contraseña`, `tipoDeUsuario`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
+VALUES ('$usuario','$contraseña','$tipoUsuario','$nombre','$apellidos','$edad','$correo','$telefono')";
 if (mysqli_query($conexion, $consulta)) {
     header("Location:../confirmacionRegistro.html");
 } else {

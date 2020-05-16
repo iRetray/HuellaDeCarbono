@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/estilosPack2.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script> 
+    <script src="js/bootstrap.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet"> 
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript" src="js/scriptsVerificacion.js"></script>
+    <link rel="stylesheet" href="css/estiloSlider.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Inicio de sesión</title>
+</head>
+<body class="gris">
+
+	<!--Barra de navegacion-->
+	<nav class="navbar sticky-top navbar-dark bg-dark sombraNav" href="index.html">
+		<a class="navbar-brand" href="index.html">
+			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
+			iFootprint
+			<small class="text-muted">PRO</small>
+		</a>
+	</nav>
+
+	<div class="formularioPadre">
+		<div class="jumbotron formulario">
+			<center>
+				<p class="display-4">Inicio de Sesión</p>
+			</center>              
+
+                <b-form id="app" @submit="checkForm" action="php/login.php" method="post" novalidate="true"
+                v-on:submit.prevent="checkForm" name="formRegistro"> 
+                
+                <center>
+                    <p class="lead">Autenticarme con mi correo</p>
+                </center> 
+                <center>
+                <label class="switch">
+                    <input type="checkbox"
+                    v-model="conCorreo">
+                    <span class="slider round"></span>
+                </label>
+                </center>
+
+                
+                <br>
+
+
+                    <div class="form-group" v-if="conCorreo">
+                        <label for="correo"><i class="far fa-envelope"></i> Correo electrónico</label>
+
+                        <b-form-input 
+                        type="email" 
+                        class="form-control" 
+                        id="correo" 
+                        aria-describedby="emailHelp" 
+                        placeholder="example@email.com"
+                        v-model="correo" 
+                        :state="esCorreoValido" 
+                        name="correo"
+                        autocomplete="off">
+                        </b-form-input>
+
+                        <small v-if="esCorreoVacio">
+                            <p class="text-danger">Debes ingresar un correo</p> 
+                        </small>
+                        <small v-if="esCorreoInvalido">
+                            <p class="text-danger">El correo debe tener un formato de email</p> 
+                        </small>
+
+                    </div>
+
+                    <div class="form-group" v-else>
+                        <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
+
+                        <b-form-input 
+                        type="text" 
+                        class="form-control" 
+                        id="usuario" 
+                        aria-describedby="usuarioHelp" 
+                        placeholder="theWorldKeeper"
+                        v-model="usuario" 
+                        :state="usuarioOK" 
+                        name="usuario"
+                        autocomplete="off">
+                        </b-form-input>      
+
+                        <b-form-invalid-feedback :state="usuarioOK">
+                            El usuario debe tener una longitud de 8 a 15 caracteres
+                        </b-form-invalid-feedback>
+                        <b-form-valid-feedback :state="usuarioOK">
+                            Formato de usuario valido
+                        </b-form-valid-feedback>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contraseña"><i class="fas fa-key"></i> Contraseña</label>
+
+                        <b-form-input 
+                        type="password" 
+                        class="form-control" 
+                        id="contraseña" 
+                        aria-describedby="claveHelp" 
+                        placeholder="Escribe tu contraseña"
+                        v-model="contraseña" 
+                        :state="contraseñaOK" 
+                        name="contraseña"
+                        autocomplete="off">
+                        </b-form-input>
+
+                        <small v-if="contraseñaOK">
+                        </small>
+                        <small v-else>
+                            <p class="text-danger">Las contraseñas tienen al menos 8 caracteres</p> 
+                        </small>
+
+                    </div>
+
+                    <center><div class="g-recaptcha" data-sitekey="6LcB2vcUAAAAACbkHRHqYOjI9q48otOTsppl2jKE"
+                        data-theme="dark"></div></center>
+                    <br>
+                  
+                    <center><button type="submit" class="btn btn-primary">Iniciar Sesión</button></center>
+                  
+                  </b-form>
+		</div>
+	</div>
+
+
+        <!-- Script de verificacion de formulario -->
+        <script>
+            const app = new Vue({
+            el:'#app',
+            data:{
+                conCorreo: false,
+                correo: "",
+                usuario: "",
+                contraseña: ""
+            },
+            computed: {                
+                esCorreoValido() {
+                    if(!this.correo) {
+                        return false;
+                    } else if(!this.validEmail(this.correo)) {
+                        return false;      
+                    } else {
+                        return true;
+                    }
+                },
+                esCorreoVacio() {
+                    if(!this.correo) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                },
+                esCorreoInvalido() {
+                    if(!this.correo) {
+                        return false;
+                    } else if(!this.validEmail(this.correo)) {
+                        return true;      
+                    } else {
+                        return false;
+                    }
+                },
+                usuarioOK() {
+                    if (this.usuario==null) {
+                        return false;
+                    } else {
+                        if (this.usuario.length >= 8 && this.usuario.length <= 15) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+                },
+                contraseñaOK() {
+                    if(this.contraseña.length >= 8)
+                        {		
+                            return true;
+                        }
+                        return false;
+                }
+            },
+            methods:{
+                checkForm:function(e) {
+                    if (
+                        (this.validEmail(this.correo) && this.contraseña.length>=8) ||
+                        (this.usuario.length>=8 && this.usuario.length<= 15 && this.contraseña.length>=8)
+                         ){
+                        document.formRegistro.submit();
+                    } else {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Datos incompletos',
+                        text: 'Debes completar todos los campos para iniciar sesión'
+                        })
+                    }                
+                },
+                validEmail:function(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+                },
+                validarContraseña:function(clave){
+                    if(clave.length >= 8)
+                        {		
+                            var mayuscula = false;
+                            var minuscula = false;
+                            var numero = false;
+                            var caracter_raro = false;
+                            
+                            for(var i = 0;i<clave.length;i++)
+                            {
+                                if(clave.charCodeAt(i) >= 65 && clave.charCodeAt(i) <= 90)
+                                {
+                                    mayuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 97 && clave.charCodeAt(i) <= 122)
+                                {
+                                    minuscula = true;
+                                }
+                                else if(clave.charCodeAt(i) >= 48 && clave.charCodeAt(i) <= 57)
+                                {
+                                    numero = true;
+                                }
+                                else
+                                {
+                                    caracter_raro = true;
+                                }
+                            }
+                            if(mayuscula == true && minuscula == true && caracter_raro == true && numero == true)
+                            {
+                                return true;
+                            }
+                        }
+                        return false;
+                }
+            }
+            })
+        </script>
+
+</body>
+</html>
