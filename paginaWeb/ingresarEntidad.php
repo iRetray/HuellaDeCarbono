@@ -65,16 +65,20 @@
     <div class="container alert alert-primary" role="alert">
     <center>  
     <p class="h4">Conexión con organización</p>
+    <hr class="my-4">
     <form action="conectarEntidad.php">
     <div class="input-group">
         <div class="input-group-prepend">
+            <span class="input-group-text" id=""><i class="fas fa-university"></i></span>
             <span class="input-group-text" id="">Código de tu entidad</span>
         </div>
-    <input type="text" class="form-control">
+    <input type="text" class="form-control" v-model="codigo" required="true">
+    
+    </div>
+    <hr class="my-4">
     <button type="submit" class="btn btn-primary">
             Asociarme con mi entidad
         </button>
-    </div>
     </div>
     </form>    
     </center>    
@@ -88,41 +92,11 @@
             const app = new Vue({
             el:'#appVue',
             data:{
-                conCorreo: false                
+                codigo: null               
             },
             computed: {
-                noTieneCalculos() {
-
-                },
-                isChecked() {
-                    return this.conCorreo;
-                },
                 nombre() {
                     return "<?php echo $nombre; ?>";
-                },
-                apellido() {
-                    return "<?php echo $apellido; ?>";
-                },
-                usuario() {
-                    return "<?php echo $usuario; ?>";
-                },
-                tipoUsuario() {
-                    return "<?php echo $tipo; ?>";
-                },
-                edad() {
-                    return "<?php echo $edad; ?>";
-                },
-                correo() {
-                    return "<?php echo $correo; ?>";
-                },
-                telefono() {
-                    return "<?php echo $telefono; ?>";
-                },
-                organizacion() {
-                    return "<?php echo $entidad; ?>";
-                },
-                hayOrganizacion() {
-                    return "<?php echo $entidad; ?>".lenght == 0;
                 }
             },
             methods:{
