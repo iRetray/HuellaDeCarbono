@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Home</title>
+    <title>Ingresar Entidad</title>
 </head>
 <body class="gris">
 
@@ -61,49 +61,23 @@
 
 <div class="jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
-    <div v-if="hayOrganizacion">
-        {{ organizacion }}
-    </div>
-    <div v-else>
-        <form action="ingresarEntidad.php">
-        No perteneces a ninguna organización. <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-sign-in-alt"></i> Unirme ahora</button>
-        </form>
-    </div>
     <hr class="my-4">
-    <small class="text-muted">Ver mis datos personales</small><br>
-    <label class="switch">
-        <input type="checkbox"
-        v-model="conCorreo">
-        <span class="slider round"></span>
-    </label>
-    <div v-if="isChecked">
-        <div class="alert alert-secondary" role="alert">
-            <h4>{{ nombre }} {{ apellido }}</h4>
-            <p v-if="hayOrganizacion"><i class="fas fa-university"></i> Organización: {{ organizacion }}</p>
-            <p v-else><i class="fas fa-university"></i> Organización: Ninguna</p>
-            
-            <small>{{ tipoUsuario }}</small>
-            <p><strong>Nombre de usuario: </strong> {{ usuario }}<br>
-            <strong>Edad: </strong> {{ edad }}<br>
-            <strong>Correo electrónico: </strong> {{ correo }}<br>
-            <strong>Teléfono: </strong> {{ telefono }}</p>
-        </div> 
+    <div class="container alert alert-primary" role="alert">
+    <center>  
+    <p class="h4">Conexión con organización</p>
+    <form action="conectarEntidad.php">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="">Código de tu entidad</span>
+        </div>
+    <input type="text" class="form-control">
+    <button type="submit" class="btn btn-primary">
+            Asociarme con mi entidad
+        </button>
     </div>
-    
-    <hr class="my-4">
-    <p class="lead">Bienvenido! Esta es tu plataforma de inicio en <strong>iFootprint</strong></p>
-    <div class="alert alert-primary" role="alert">
-        <center>
-    <i class="fas fa-exclamation-triangle"></i> Ahora podrás realizar <strong>calculos de tu huella de carbono</strong>, y estos quedarán guardados en tu <strong>historial</strong>.
+    </div>
+    </form>    
     </center>    
-</div>
-    <div class="alert alert-success" role="alert">
-        <center>
-    <i class="fas fa-question-circle"></i> ¡Vaya! <strong>Detectamos que aún no has realizado tu primer examen<br><br>
-    <button type="button" class="btn btn-success"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
-    </center>
-    </div>
-</div>
 
 
 </div>
