@@ -33,32 +33,20 @@
 	<div class="formularioPadre">
 		<div class="jumbotron formulario">
 			<center>
-                <h2><span class="badge badge-success">Personas naturales</span></h2>
-				<p class="display-4">Inicio de Sesión</p>
-            
-            <small class="text-muted">¿No quieres iniciar sesión como un usuario standard? <a href="loginEntidad.html">Inicio de sesión para organizaciones</a></small>
-        </center>          
+                <h2><span class="badge badge-warning">Enterprise</span></h2> 
+                <p class="display-4">Inicio de Sesión</p>
+                <small class="text-muted">¿No quieres iniciar sesión como una organización? <a href="login.html">Inicio de sesión para usuarios</a></small>
+			</center>              
 
-                <b-form id="app" @submit="checkForm" action="php/login.php" method="post" novalidate="true"
+                <b-form id="app" @submit="checkForm" action="php/loginEntidad.php" method="post" novalidate="true"
                 v-on:submit.prevent="checkForm" name="formRegistro"> 
                 
-                <center>
-                    <br>  
-                    <p class="lead">Autenticarme con mi correo</p>
-                </center> 
-                <center>
-                <label class="switch">  
-                    <input type="checkbox"
-                    v-model="conCorreo">
-                    <span class="slider round"></span>
-                </label>
-                </center>
 
                 
                 <br>
 
 
-                    <div class="form-group" v-if="conCorreo">
+                    <div class="form-group">
                         <label for="correo"><i class="far fa-envelope"></i> Correo electrónico</label>
 
                         <b-form-input 
@@ -79,30 +67,6 @@
                         <small v-if="esCorreoInvalido">
                             <p class="text-danger">El correo debe tener un formato de email</p> 
                         </small>
-
-                    </div>
-
-                    <div class="form-group" v-else>
-                        <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
-
-                        <b-form-input 
-                        type="text" 
-                        class="form-control" 
-                        id="usuario" 
-                        aria-describedby="usuarioHelp" 
-                        placeholder="theWorldKeeper"
-                        v-model="usuario" 
-                        :state="usuarioOK" 
-                        name="usuario"
-                        autocomplete="off">
-                        </b-form-input>      
-
-                        <b-form-invalid-feedback :state="usuarioOK">
-                            El usuario debe tener una longitud de 8 a 15 caracteres
-                        </b-form-invalid-feedback>
-                        <b-form-valid-feedback :state="usuarioOK">
-                            Formato de usuario valido
-                        </b-form-valid-feedback>
 
                     </div>
 
@@ -198,8 +162,7 @@
             methods:{
                 checkForm:function(e) {
                     if (
-                        (this.validEmail(this.correo) && this.contraseña.length>=8) ||
-                        (this.usuario.length>=8 && this.usuario.length<= 15 && this.contraseña.length>=8)
+                        (this.validEmail(this.correo) && this.contraseña.length>=8)
                          ){
                         document.formRegistro.submit();
                     } else {
