@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="UMLFinal" id="00CB4DF8-01E7-E439-62BB-936FF87160D6" version="3.5">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:20:23 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>00CB4DF8-01E7-E439-62BB-936FF87160D6</designId>
+</OSDM_Design>

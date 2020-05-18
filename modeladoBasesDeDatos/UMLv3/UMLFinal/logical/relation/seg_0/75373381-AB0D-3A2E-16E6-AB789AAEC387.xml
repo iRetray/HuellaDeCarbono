@@ -2,7 +2,7 @@
 <Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="usuario_entidad" directorySegmentName="seg_0" id="75373381-AB0D-3A2E-16E6-AB789AAEC387">
 <createdBy>julia</createdBy>
 <createdTime>2020-05-18 17:28:32 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>

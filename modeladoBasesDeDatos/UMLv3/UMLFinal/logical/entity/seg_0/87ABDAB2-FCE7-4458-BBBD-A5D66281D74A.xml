@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9162055A-3B5C-1DB7-2CD8-ECDE7E2E762F" name="entidad">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="87ABDAB2-FCE7-4458-BBBD-A5D66281D74A" name="informes">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:12 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:27:14 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
@@ -15,10 +15,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="idEntidad" id="E16633EB-2C9A-4BD0-A6C7-0BFF77347195">
+<Attribute name="idInformes" id="F4D115FA-0A1A-B68D-C3DA-B19BFEFFEB4F">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:23 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:27:25 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
@@ -27,66 +27,68 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nombre" id="EFDEE9E1-F6D2-968F-EC10-F6E4188745EC">
+<Attribute name="sumatoria" id="82CAF583-2076-33AF-0D40-59D0E37E46F4">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:33 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:27:36 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="direccion" id="4D9304C9-DE59-AD73-6266-BDED28063283">
+<Attribute name="promedio" id="9D752DF5-6A32-A3AD-C393-AE5A27242B07">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:41 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:27:52 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="correo" id="80595FE4-6434-65DA-EE4F-779E895CA0F7">
+<Attribute name="cantidad" id="04F87F64-DA3D-D89B-ABC4-5ECBA3C02A6A">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:52 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:28:01 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="clave" id="06F3CB2B-4FF4-AD4D-55A9-899B7394B8D9">
+<Attribute name="idUsuario" id="4AE0FB8D-EC21-C74A-4CC9-0B241E8D8DB0">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:58 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:29:32 UTC</createdTime>
+<generatorID>D13DFE88-E559-94F0-D469-604E6BBAE6D5</generatorID>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
+<referedAttribute>CC8C8C62-77CB-A574-6F82-C5DBEA243B5D</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="54858933-EC12-548C-CC11-604D02B93DED" name="entidad PK">
+<identifier id="463732F6-3097-B0A1-E9F3-51E3CC468312" name="informes PK">
 <createdBy>julia</createdBy>
-<createdTime>2020-05-18 17:26:31 UTC</createdTime>
-<ownerDesignName>ModeladoV3</ownerDesignName>
+<createdTime>2020-05-18 17:27:33 UTC</createdTime>
+<ownerDesignName>UMLFinal</ownerDesignName>
 <engineerTo>
 <item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>E16633EB-2C9A-4BD0-A6C7-0BFF77347195</attributeRef>
+<attributeRef>F4D115FA-0A1A-B68D-C3DA-B19BFEFFEB4F</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
