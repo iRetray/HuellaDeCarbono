@@ -58,14 +58,8 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['telefono'] = $telefono;
 	$_SESSION['nombreEntidad'] = $nombreEntidad;
 
-	switch ($tipoUsuario) {
-		case 1:
-			header("Location:../homeAdmin.php");
-			break;
-		case 0:
-			header("Location:../homeUser.php");
-			break;
-	}
+	header("Location:../homeUser.php");
+
 } else{
 	header("Location:../errorLogin.html");
 }
