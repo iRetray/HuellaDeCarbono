@@ -1,0 +1,182 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4FB5616F-88AF-CF11-A5D8-2D2E51709AC3" name="usuario">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:23:38 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idUsuario" id="CC8C8C62-77CB-A574-6F82-C5DBEA243B5D">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:23:47 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="usuario" id="EDCA8996-2F41-F21C-206A-C209EFB28142">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:24:12 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="contraseña" id="0E8531BC-5283-26C2-06FB-A70D9FD18580">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:24:26 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombres" id="600926E9-2492-72B8-FB54-1C58B4818FCD">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:24:36 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="apellidos" id="604CC5B9-02F2-9C6A-3615-CCA412E1C02A">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:24:47 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="edad" id="09FC6F5A-A385-D226-D9EC-DDF1F5699720">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:24:54 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="correo" id="F625B90D-2FAB-2B88-78AA-EC8E2F68331D">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:25:06 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefono" id="A4DB2499-98F7-E35E-C701-1E217578EBD9">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:25:18 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entidad" id="80E9F0ED-6FF1-E6CC-51C4-428CDF58F00C">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:25:33 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nombreEntidad" id="99CD56DA-2AB0-A33C-A25C-0228DA47E205">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:25:46 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idEntidad" id="CAFBC643-611C-8AC6-DAAC-C1F29198B5B8">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:28:32 UTC</createdTime>
+<generatorID>75373381-AB0D-3A2E-16E6-AB789AAEC387</generatorID>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>E16633EB-2C9A-4BD0-A6C7-0BFF77347195</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="idInformes" id="602888AF-00B0-8629-900B-4F7D9CAEA2F3">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:29:18 UTC</createdTime>
+<generatorID>D13DFE88-E559-94F0-D469-604E6BBAE6D5</generatorID>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<referedAttribute>F4D115FA-0A1A-B68D-C3DA-B19BFEFFEB4F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FCA31BEE-D8C1-1C69-F32A-1E4FE5F0D6A8" name="usuario PK">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:23:58 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CC8C8C62-77CB-A574-6F82-C5DBEA243B5D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

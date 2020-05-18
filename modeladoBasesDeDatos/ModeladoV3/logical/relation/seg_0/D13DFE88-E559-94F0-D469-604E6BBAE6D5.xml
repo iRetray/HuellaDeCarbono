@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="informe_usuario" directorySegmentName="seg_0" id="D13DFE88-E559-94F0-D469-604E6BBAE6D5">
+<createdBy>julia</createdBy>
+<createdTime>2020-05-18 17:29:18 UTC</createdTime>
+<ownerDesignName>ModeladoV3</ownerDesignName>
+<engineerTo>
+<item key="AB8E217E-83B5-14C2-C77A-E8CFC11F734E" value="true"/>
+</engineerTo>
+<sourcePk>463732F6-3097-B0A1-E9F3-51E3CC468312</sourcePk>
+<targetPk>FCA31BEE-D8C1-1C69-F32A-1E4FE5F0D6A8</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>87ABDAB2-FCE7-4458-BBBD-A5D66281D74A</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>4FB5616F-88AF-CF11-A5D8-2D2E51709AC3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
