@@ -19,8 +19,8 @@ while ($columna = mysqli_fetch_array( $resultado )) {
 }
 
 $consulta = "INSERT INTO `usuario`
-(`usuario`, `contraseña`, `tipoDeUsuario`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
-VALUES ('$usuario','$contraseña','$tipoUsuario','$nombre','$apellidos','$edad','$correo','$telefono')";
+(`usuario`, `contraseña`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
+VALUES ('$usuario','$contraseña','$nombre','$apellidos','$edad','$correo','$telefono')";
 if (mysqli_query($conexion, $consulta)) {
     $consultaCalculos = "INSERT INTO `informes`(`idInformes`, `sumatoria`, `promedio`, `cantidad`) 
     VALUES ('$usuario',0,0,0)";
