@@ -13,7 +13,7 @@
 	$edad = $_SESSION['edad'];
 	$correo = $_SESSION['correo'];
     $telefono = $_SESSION['telefono'];
-    $entidad = $_SESSION['entidad'];
+    $nombreEntidad = $_SESSION['nombreEntidad'];
 
     if ($nombre=="") {
         header("Location:index.html");
@@ -62,11 +62,14 @@
 <div class="jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
     <div v-if="hayOrganizacion">
-        {{ organizacion }}
+    <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>
     </div>
     <div v-else>
-        <form action="ingresarEntidad.php">
-        No perteneces a ninguna organización. <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-sign-in-alt"></i> Unirme ahora</button>
+        <form action="ingresarEntidad.php" method="POST">
+            {{ organizacion }}
+        No perteneces a ninguna organización.<br>
+        <input type="text" placeholder="Código de entidad" required="true" name="codigo">
+        <button type="submit" class="btn btn-primary btn-sm"><i class="fas fa-sign-in-alt"></i> Unirme ahora</button>
         </form>
     </div>
     <hr class="my-4">
@@ -145,10 +148,10 @@
                     return "<?php echo $telefono; ?>";
                 },
                 organizacion() {
-                    return "<?php echo $entidad; ?>";
+                    return "<?php echo $nombreEntidad; ?>";
                 },
                 hayOrganizacion() {
-                    return "<?php echo $entidad; ?>".lenght == 0;
+                    return "<?php echo $nombreEntidad; ?>".lenght != "";
                 }
             },
             methods:{

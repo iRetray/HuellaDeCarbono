@@ -27,7 +27,7 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$edad = $columna['edad'];
 			$correo = $columna['correo'];
 			$telefono = $columna['telefono'];
-			$entidad = $columna['entidad'];
+			$nombreEntidad = $columna['nombreEntidad'];
 			$claveCorrecta = true;
 			}
         }
@@ -40,7 +40,7 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$edad = $columna['edad'];
 			$correo = $columna['correo'];
 			$telefono = $columna['telefono'];
-			$entidad = $columna['entidad'];
+			$nombreEntidad = $columna['nombreEntidad'];
 			$claveCorrecta = true;		
 			}
         }
@@ -56,7 +56,7 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['edad'] = $edad;
 	$_SESSION['correo'] = $correo;
 	$_SESSION['telefono'] = $telefono;
-	$_SESSION['entidad'] = $entidad;
+	$_SESSION['nombreEntidad'] = $nombreEntidad;
 
 	switch ($tipoUsuario) {
 		case 1:

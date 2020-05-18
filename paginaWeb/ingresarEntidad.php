@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
     session_start();
     $nombre = $_SESSION['nombre'];  
     $usuario = $_SESSION['usuario'];
@@ -18,6 +23,26 @@
     if ($nombre=="") {
         header("Location:index.html");
     }
+
+    $codigo = $_POST['codigo'];
+    require("php/conexion.php");
+    $consulta = "SELECT * FROM `entidad`";
+    $resultado = mysqli_query($conexion, $consulta);
+
+    $codigoCorrecto = false;
+    $nombreEntidad = "";
+    while ($columna = mysqli_fetch_array( $resultado )) {
+	if ($columna['idEntidad']==$codigo) {
+            $codigoCorrecto = true;
+            $nombreEntidad = $columna['nombre'];
+            $consultaIngreso = "UPDATE `usuario` SET `entidad`='$codigo', `nombreEntidad`='$nombreEntidad'
+            WHERE `correo`='$correo'";
+            $resultado = mysqli_query($conexion, $consultaIngreso) or die(mysqli_error($conexion));
+            $_SESSION['nombreEntidad'] = $nombreEntidad;
+        }        
+    }
+    
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +67,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Ingresar Entidad</title>
 </head>
-<body class="gris">
+<body class="gris" onload="mensaje();">
 
 	<!--Barra de navegacion-->
 	<nav class="navbar sticky-top navbar-dark bg-dark" href="index.html">
@@ -59,32 +84,48 @@
 <div id="appVue" class="padreHome">
 
 
-<div class="jumbotron">
-    <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
-    <hr class="my-4">
-    <div class="container alert alert-primary" role="alert">
-    <center>  
-    <p class="h4">Conexión con organización</p>
-    <hr class="my-4">
-    <form action="conectarEntidad.php">
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id=""><i class="fas fa-university"></i></span>
-            <span class="input-group-text" id="">Código de tu entidad</span>
-        </div>
-    <input type="text" class="form-control" v-model="codigo" required="true">
-    
-    </div>
-    <hr class="my-4">
-    <button type="submit" class="btn btn-primary">
-            Asociarme con mi entidad
-        </button>
-    </div>
-    </form>    
-    </center>    
+<div class="formularioPadre">
+		<div class="jumbotron formulario">
+			<center>
+                <p class="display-4" v-if="codigoEncontrado">Ahora puedes volver a tu inicio para revisar los cambios hechos.</p>
+                <p class="display-4" v-else>Intenta ingresar el código de tu entidad de nuevo.</p>
+                <br>
+                <button class="btn btn-warning btn-lg btn-block"
+                onclick="location.href='homeUser.php'"><i class="fas fa-home"></i> Volver al Home</button>
+			</center>
+		</div>
+	</div>
 
-
-</div>
+<script>
+    function mensaje() {
+        if ("<?php echo $codigoCorrecto; ?>") {
+            Swal.fire({
+            title: 'Entidad conectada',
+            icon: 'success',
+            html:
+                'Ahora perteneces a la entidad '+
+                '<?php echo $nombreEntidad; ?>'+
+                ', tus resultados podrán ser monitoreados por tu organización.',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'OK'
+            })
+        } else {
+            Swal.fire({
+            title: 'Código incorrecto',
+            icon: 'error',
+            html:
+                'EL código que ingresaste es incorrecto'+
+                ', vuelve a tu plataforma e intentalo de nuevo.',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+                'OK'
+            })
+        }
+    }
+</script>
 
 
         <!-- Script -->
@@ -95,8 +136,8 @@
                 codigo: null               
             },
             computed: {
-                nombre() {
-                    return "<?php echo $nombre; ?>";
+                codigoEncontrado() {
+                    return "<?php echo $codigoCorrecto; ?>";
                 }
             },
             methods:{
