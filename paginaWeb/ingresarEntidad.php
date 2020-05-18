@@ -18,7 +18,6 @@ error_reporting(E_ALL);
 	$edad = $_SESSION['edad'];
 	$correo = $_SESSION['correo'];
     $telefono = $_SESSION['telefono'];
-    $entidad = $_SESSION['entidad'];
 
     if ($nombre=="") {
         header("Location:index.html");
