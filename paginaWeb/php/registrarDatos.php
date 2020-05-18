@@ -10,10 +10,12 @@ $apellidos = $_POST['apellidos'];
 $edad = $_POST['edad'];
 $telefono = $_POST['telefono'];
 
-if($adminCode=="12d68c") {
-    $tipoUsuario = "1";
-} else {
-    $tipoUsuario = "0";
+$consulta = "SELECT * FROM `usuario`";
+$resultado = mysqli_query($conexion, $consulta);
+while ($columna = mysqli_fetch_array( $resultado )) {
+    if ($columna['usuario']==$usuario || $columna['correo']==$correo) {
+        header("Location:errorRepetido.html");
+    }
 }
 
 $consulta = "INSERT INTO `usuario`

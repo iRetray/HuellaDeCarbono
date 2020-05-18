@@ -32,14 +32,14 @@
 	<div class="formularioPadre">
 		<div class="jumbotron formulario">
 			<center>
-                <h2><span class="badge badge-success">Personas naturales</span></h2>
+                <h2><span class="badge badge-warning">Enterprise</span></h2> 
                 <p class="display-4">Registro en iFootprint</p>
-                   
-                <small class="text-muted">¿No quieres registrarte como una persona natural? <a href="registroEntidad.html">Registro para entidades</a></small>
+                 
+                <small class="text-muted">¿No quieres registrarte como una organización? <a href="registro.html">Registro para personas naturales</a></small>
             </center>
             <br>             
 
-                <b-form id="app" @submit="checkForm" action="php/registrarDatos.php" method="post" novalidate="true"
+                <b-form id="app" @submit="checkForm" action="php/registrarDatosEntidad.php" method="post" novalidate="true"
                 v-on:submit.prevent="checkForm" name="formRegistro"> 
                     
                     <div class="form-group">
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de usuario</label>
+                        <label for="usuario"><i class="fas fa-user-tie"></i> Nombre de la entidad</label>
 
                         <b-form-input 
                         type="text" 
@@ -82,10 +82,10 @@
                         </b-form-input>      
 
                         <b-form-invalid-feedback :state="usuarioOK">
-                            El usuario debe tener una longitud de 8 a 15 caracteres
+                            El nombre debe tener una longitud de 8 a 15 caracteres
                         </b-form-invalid-feedback>
                         <b-form-valid-feedback :state="usuarioOK">
-                            Formato de usuario valido
+                            Formato de entidad valido
                         </b-form-valid-feedback>
 
                     </div>
@@ -150,92 +150,27 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nombre"><i class="fas fa-id-badge"></i> Nombres</label>
+                        <label for="direccion"><i class="fas fa-map-marked-alt"></i> Dirección</label>
 
-                        <b-form-input
+                        <b-form-input 
                         type="text" 
                         class="form-control" 
-                        id="nombre"
-                        placeholder="Ingresa tu nombre"
-                        v-model="nombre" 
-                        :state="nombreOK" 
-                        name="nombre"
+                        id="direccion" 
+                        placeholder="Carrera 14 # 15 Transversal 18b"
+                        v-model="direccion" 
+                        :state="direccionOK" 
+                        name="direccion"
                         autocomplete="off">
-                        </b-form-input>
+                        </b-form-input>      
 
-                        <small v-if="nombreOK" class="text-success">
-                        </small>
-                        <small v-else="nombreOK" class="text-danger">
-                            Debes ingresar tu nombre
-                        </small>
+                        <b-form-invalid-feedback :state="direccionOK">
+                            La direccion debe tener una longitud mínima de 8 caracteres
+                        </b-form-invalid-feedback>
+                        <b-form-valid-feedback :state="direccionOK">
+                            Formato de direccion valido
+                        </b-form-valid-feedback>
 
                     </div>
-
-                    <div class="form-group">
-                        <label for="apellidos"><i class="far fa-address-card"></i> Apellidos</label>
-
-                        <b-form-input
-                        type="text" 
-                        class="form-control" 
-                        id="apellidos"
-                        placeholder="Ingresa tus apellidos"
-                        v-model="apellidos" 
-                        :state="apellidosOK" 
-                        name="apellidos"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="apellidosOK" class="text-success">
-                        </small>
-                        <small v-else="apellidosOK" class="text-danger">
-                            Debes ingresar tus apellidos
-                        </small>
-
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="edad"><i class="far fa-address-card"></i> ¿Cuantos años tienes?</label>
-
-                        <b-form-input
-                        type="number" 
-                        class="form-control" 
-                        id="edad"
-                        placeholder="Ingresa tu edad"
-                        v-model="edad" 
-                        :state="edadEntera" 
-                        name="edad"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="edadEntera" class="text-danger">
-                        </small>
-                        <small v-else="edadEntera" class="text-danger">
-                            Tu edad debe ser un numero completo
-                        </small>
-
-                    </div> 
-
-                    <div class="form-group">
-                        <label for="telefono"><i class="fas fa-mobile-alt"></i> Número de telefono</label>
-
-                        <b-form-input
-                        type="number" 
-                        class="form-control" 
-                        id="telefono"
-                        placeholder="+57 312 345 6789"
-                        v-model="telefono" 
-                        :state="telefonoOK" 
-                        name="telefono"
-                        autocomplete="off">
-                        </b-form-input>
-
-                        <small v-if="telefonoOK" class="text-danger">
-                        </small>
-                        <small v-else="telefonoOK" class="text-danger">
-                            El telefono debe tener al menos 8 numeros
-                        </small>
-
-                    </div> 
 
                     <center><div class="g-recaptcha" data-sitekey="6LcB2vcUAAAAACbkHRHqYOjI9q48otOTsppl2jKE"
                         data-theme="dark"></div></center>
@@ -267,7 +202,8 @@
                 apellidos: "",
                 edad: "",
                 telefono: "",
-                formularioCorrecto: null
+                formularioCorrecto: null,
+                direccion: ""
             },
             computed: {
                 esCorreoInvalido() {
@@ -293,6 +229,9 @@
                     } else {
                         return true;
                     }
+                },
+                direccionOK() {
+                    return this.direccion.length >= 8
                 },
                 esCorreoVacio() {
                     if(!this.correo) {
@@ -422,11 +361,10 @@
             methods:{
                 checkForm:function(e) {
                     if (
-                        this.telefono.length>=8 && this.validEmail(this.correo) && 
-                        this.usuario.length>=8 && this.usuario.length<= 15 &&
+                        this.validEmail(this.correo) && 
+                        this.usuario.length>=8 &&
                         this.validarContraseña(this.contraseña) && this.contraseña == this.contraseñaVerificada &&
-                        this.nombre.length>=2 && this.apellidos.length>=2 && this.edad%1==0 && this.edad!="" &&
-                        this.telefono.length>=8
+                        this.direccion.length>=8
                         ){
                         document.formRegistro.submit();                                               
                     } else {
