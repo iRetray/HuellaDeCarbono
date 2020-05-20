@@ -14,7 +14,7 @@
         header("Location:../index.html");
     }
 
-    require("php/conexion.php");
+    require("conexion.php");
 
     $promedioEntidad = 0;
 	$cantidadExamenes = 0;

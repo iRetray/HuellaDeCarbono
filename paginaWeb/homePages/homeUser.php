@@ -16,26 +16,26 @@
     $nombreEntidad = $_SESSION['nombreEntidad'];
 
     if ($nombre=="") {
-        header("Location:index.html");
+        header("Location:../index.html");
     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="css/estilosPack2.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/estilos.css">
+	<link rel="stylesheet" href="../css/estilosPack2.css">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script> 
-    <script src="js/bootstrap.min.js"></script>  
+    <script type="text/javascript" src="../js/bootstrap.js"></script> 
+    <script src="../js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>
     <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@3/dark.css" rel="stylesheet"> 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@9/dist/sweetalert2.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="text/javascript" src="js/scriptsVerificacion.js"></script>
-    <link rel="stylesheet" href="css/estiloSlider.css">
-    <link rel="stylesheet" href="css/estilosHome.css">
+    <script type="text/javascript" src="../js/scriptsVerificacion.js"></script>
+    <link rel="stylesheet" href="../css/estiloSlider.css">
+    <link rel="stylesheet" href="../css/estilosHome.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -47,11 +47,11 @@
 	<!--Barra de navegacion-->
 	<nav class="navbar sticky-top navbar-dark bg-dark" href="../index.html">
 		<a class="navbar-brand" href="../index.html">
-			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
+			<img src="../svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
 			iFootprint
 			<small class="text-muted">PRO</small>
         </a>
-        <form class="form-inline" action="cerrarSesion.php">
+        <form class="form-inline" action="../php/cerrarSesion.php">
 			<button class="btn btn-danger" type="submit"><i class="fas fa-door-open"></i> Cerrar sesión</button>
 			</div>
 		</form>
@@ -62,10 +62,10 @@
 <div class="jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
     <div v-if="hayOrganizacion">
-    <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>
+        <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>
     </div>
     <div v-else>
-        <form action="ingresarEntidad.php" method="POST">
+        <form action="../php/ingresarEntidad.php" method="POST">
             {{ organizacion }}
         No perteneces a ninguna organización.<br>
         <input type="text" placeholder="Código de entidad" required="true" name="codigo">
@@ -151,7 +151,7 @@
                     return "<?php echo $nombreEntidad; ?>";
                 },
                 hayOrganizacion() {
-                    return "<?php echo $nombreEntidad; ?>".lenght != "";
+                    return "<?php echo $nombreEntidad; ?>".lenght;
                 }
             },
             methods:{
