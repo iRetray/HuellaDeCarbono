@@ -11,7 +11,7 @@
 	$usuarios = $_SESSION['usuarios'];
 
     if ($nombre=="") {
-        header("Location:index.html");
+        header("Location:../index.html");
     }
 
     require("php/conexion.php");
@@ -48,5 +48,5 @@
 	$_SESSION['promedioEntidad'] = $promedioEntidad;
 	$_SESSION['cantidadExamenes'] = $cantidadExamenes;
 	$_SESSION['usuarios'] = $usuarios;
-	header("Location:homeEntidad.php");
+	header("Location:../homePages/homeEntidad.php");
 ?>

@@ -20,7 +20,7 @@ error_reporting(E_ALL);
     $telefono = $_SESSION['telefono'];
 
     if ($nombre=="") {
-        header("Location:index.html");
+        header("Location:../index.html");
     }
 
     $codigo = $_POST['codigo'];
@@ -90,7 +90,7 @@ error_reporting(E_ALL);
                 <p class="display-4" v-else>Intenta ingresar el código de tu entidad de nuevo.</p>
                 <br>
                 <button class="btn btn-warning btn-lg btn-block"
-                onclick="location.href='homeUser.php'"><i class="fas fa-home"></i> Volver al Home</button>
+                onclick="location.href='../homePages/homeUser.php'"><i class="fas fa-home"></i> Volver al Home</button>
 			</center>
 		</div>
 	</div>

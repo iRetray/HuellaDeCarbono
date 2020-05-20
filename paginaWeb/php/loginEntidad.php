@@ -67,9 +67,9 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['promedioEntidad'] = $promedioEntidad;
 	$_SESSION['cantidadExamenes'] = $cantidadExamenes;
 	$_SESSION['usuarios'] = $usuarios;
-	header("Location:../homeEntidad.php");
+	header("Location:../homePages/homeEntidad.php");
 
 } else{
-	header("Location:../errorLogin.html");
+	header("Location:../errores/errorLogin.html");
 }
 ?>

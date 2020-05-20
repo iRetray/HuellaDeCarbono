@@ -45,8 +45,8 @@
 <body class="gris">
 
 	<!--Barra de navegacion-->
-	<nav class="navbar sticky-top navbar-dark bg-dark" href="index.html">
-		<a class="navbar-brand" href="index.html">
+	<nav class="navbar sticky-top navbar-dark bg-dark" href="../index.html">
+		<a class="navbar-brand" href="../index.html">
 			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
 			iFootprint
 			<small class="text-muted">PRO</small>

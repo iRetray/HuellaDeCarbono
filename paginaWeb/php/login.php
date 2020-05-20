@@ -58,9 +58,9 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['telefono'] = $telefono;
 	$_SESSION['nombreEntidad'] = $nombreEntidad;
 
-	header("Location:../homeUser.php");
+	header("Location:../homePages/homeUser.php");
 
 } else{
-	header("Location:../errorLogin.html");
+	header("Location:../errores/errorLogin.html");
 }
 ?>

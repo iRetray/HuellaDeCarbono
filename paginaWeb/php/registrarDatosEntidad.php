@@ -10,7 +10,7 @@ $consulta = "SELECT * FROM `entidad`";
 $resultado = mysqli_query($conexion, $consulta);
 while ($columna = mysqli_fetch_array( $resultado )) {
     if ($columna['nombre']==$nombre || $columna['correo']==$correo) {
-        header("Location:errorRepetido.html");
+        header("Location:../errores/errorRepetido.html");
     }
 }
 
@@ -30,6 +30,6 @@ VALUES ('$idHexa','$nombre','$direccion','$correo','$contraseña')";
 if (mysqli_query($conexion, $consulta)) {
     header("Location:../confirmacionRegistro.html");
 } else {
-    header("Location:../errorRegistro.html");
+    header("Location:../errores/errorRegistro.html");
 }
 ?>

@@ -11,7 +11,7 @@
 	$usuarios = $_SESSION['usuarios'];
 
     if ($nombre=="") {
-        header("Location:index.html");
+        header("Location:../index.html");
     }
 ?>
 <!DOCTYPE html>
@@ -40,8 +40,8 @@
 <body class="gris">
 
 	<!--Barra de navegacion-->
-	<nav class="navbar sticky-top navbar-dark bg-dark" href="index.html">
-		<a class="navbar-brand" href="index.html">
+	<nav class="navbar sticky-top navbar-dark bg-dark" href="../index.html">
+		<a class="navbar-brand" href="../index.html">
 			<img src="svg/mundo-verde.svg" width="50" height="50" class="d-inline-block" alt="">
 			iFootprint
 			<small class="text-muted">PRO</small>
@@ -97,7 +97,7 @@
         <h4> {{ usuarios }} </h4>
     </div>
     <center>
-<button type="button" class="btn btn-warning" onclick="location.href='actualizarDatos.php'"><i class="fas fa-cloud-upload-alt"></i><strong> Actualizar datos</strong></button>
+<button type="button" class="btn btn-warning" onclick="location.href='../php/actualizarDatos.php'"><i class="fas fa-cloud-upload-alt"></i><strong> Actualizar datos</strong></button>
 </center>
 </div>
 
