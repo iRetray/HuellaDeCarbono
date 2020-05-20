@@ -137,7 +137,7 @@
     <div class="form-group" v-if="usarGas">
         <div class="alert alert-secondary" role="alert">        
         <small>
-            <p>¿Cuál es tu consumo mensual en unities? <strong>{{ gas }}</strong> </p>              
+            <p>¿Cuál es tu consumo mensual en metros cúbicos? <strong>{{ gas }}</strong> </p>              
         </small>
             <input 
             type="range" 

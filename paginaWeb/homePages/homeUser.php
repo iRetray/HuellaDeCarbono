@@ -65,6 +65,7 @@
 
 <div class="calculadora jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
+    <h3 v-show="haHechoExamen">Promedio de huella de carbono: <span class="badge badge-warning"><i class="fas fa-biohazard"></i> {{ promedio }}</span></h3>
     <div v-if="hayOrganizacion">
         <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>
     </div>
@@ -108,8 +109,8 @@
 
     <div class="alert alert-success" role="alert" v-if="haHechoExamen">
         <center>
-        <i class="fas fa-question-circle"></i> ¿Quieres realizar otro examen? <br>
-        <button type="button" class="btn btn-success" onlick="location.href='calculoHuella.php'"><i class="fas fa-feather-alt"></i>  Realizar otro examen</button>
+        <i class="fas fa-question-circle"></i> ¿Quieres realizar otro examen? <br> <br> 
+        <button type="button" class="btn btn-success" onclick="location.href='calculoHuella.php'"><i class="fas fa-feather-alt"></i>  Realizar otro examen</button>
         </center>
     </div>
     <div class="alert alert-success" role="alert" v-else>
@@ -124,7 +125,7 @@
         <h4> {{ cantidad }} </h4>
     </div>
 
-    <div class="alert alert-success" role="alert" v-if="haHechoExamen"><center>
+    <div class="alert alert-warning" role="alert" v-if="haHechoExamen"><center>
         <p><strong><i class="fas fa-temperature-low"></i> Promedio de huela de carbono:</strong>
         <h4> {{ promedio }} toneladas de CO2</h4>
     </div>
