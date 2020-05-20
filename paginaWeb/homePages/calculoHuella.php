@@ -15,10 +15,6 @@
     $telefono = $_SESSION['telefono'];
     $nombreEntidad = $_SESSION['nombreEntidad'];
 
-    $cantidad = $_SESSION['cantidad'];
-    $promedio = $_SESSION['promedio'];
-    $sumatoria = $_SESSION['sumatoria'];
-
     if ($nombre=="") {
         header("Location:../index.html");
     }
@@ -104,11 +100,11 @@
     <i class="fas fa-exclamation-triangle"></i> Ahora podrás realizar <strong>calculos de tu huella de carbono</strong>, y estos quedarán guardados en tu <strong>historial</strong>.
     </center>    
 </div>
-    <div class="alert alert-success" role="alert" v-if="haHechoExamen">
+    <div class="alert alert-success" role="alert">
         <center>
-        <i class="fas fa-question-circle"></i> ¡Vaya! <strong>Detectamos que aún no has realizado tu primer examen<br><br>
-        <button type="button" class="btn btn-success"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
-        </center>
+    <i class="fas fa-question-circle"></i> ¡Vaya! <strong>Detectamos que aún no has realizado tu primer examen<br><br>
+    <button type="button" class="btn btn-success"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
+    </center>
     </div>
 </div>
 
@@ -155,10 +151,7 @@
                     return "<?php echo $nombreEntidad; ?>";
                 },
                 hayOrganizacion() {
-                    return "<?php echo $nombreEntidad; ?>"!="";
-                },
-                haHechoExamen() {
-                    return "<?php echo $cantidad; ?>"!=0;
+                    return "<?php echo $nombreEntidad; ?>".lenght;
                 }
             },
             methods:{
