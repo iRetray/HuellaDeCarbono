@@ -104,10 +104,18 @@
     <i class="fas fa-exclamation-triangle"></i> Ahora podrás realizar <strong>calculos de tu huella de carbono</strong>, y estos quedarán guardados en tu <strong>historial</strong>.
     </center>    
 </div>
+
+
     <div class="alert alert-success" role="alert" v-if="haHechoExamen">
         <center>
+        <i class="fas fa-question-circle"></i> ¿Quieres realizar otro examen? <br>
+        <button type="button" class="btn btn-success" onlick="location.href='calculoHuella.php'"><i class="fas fa-feather-alt"></i>  Realizar otro examen</button>
+        </center>
+    </div>
+    <div class="alert alert-success" role="alert" v-else>
+        <center>
         <i class="fas fa-question-circle"></i> ¡Vaya! <strong>Detectamos que aún no has realizado tu primer examen<br><br>
-        <button type="button" class="btn btn-success"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
+        <button type="button" class="btn btn-success" onclick="location.href='calculoHuella.php'"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
         </center>
     </div>
 </div>
@@ -124,9 +132,6 @@
                 conCorreo: false                
             },
             computed: {
-                noTieneCalculos() {
-
-                },
                 isChecked() {
                     return this.conCorreo;
                 },
