@@ -126,10 +126,112 @@
             </input>        
     </div>
     </div>
+
+    <!-- Pregunta 3 --> 
+    <p class="lead">¿Usas gas natural?</p>
+        <label class="switch">  
+            <input type="checkbox"
+            v-model="usarGas">
+            <span class="slider round"></span>
+        </label>
+    <div class="form-group" v-if="usarGas">
+        <div class="alert alert-secondary" role="alert">        
+        <small>
+            <p>¿Cuál es tu consumo mensual en unities? <strong>{{ gas }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="gas" 
+            v-model="gas" 
+            name="gas"
+            max=40>
+            </input>        
+    </div>
+    </div>
+
+    <!-- Pregunta 4 --> 
+    <p class="lead">¿Usas energía eléctrica?</p>
+        <label class="switch">  
+            <input type="checkbox"
+            v-model="usarElectricidad">
+            <span class="slider round"></span>
+        </label>
+    <div class="form-group" v-if="usarElectricidad">
+        <div class="alert alert-secondary" role="alert">        
+        <small>
+            <p>¿Cuál es tu consumo mensual en kWh? <strong>{{ electricidad }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="electricidad" 
+            v-model="electricidad" 
+            name="electricidad"
+            max=40>
+            </input>        
+    </div>
+    </div>
+
+    <!-- Pregunta 5 --> 
+    <p class="lead">¿Realizas viajes en avión?</p>
+        <label class="switch">  
+            <input type="checkbox"
+            v-model="usarAvion">
+            <span class="slider round"></span>
+        </label>
+    <div class="form-group" v-if="usarAvion">
+        <div class="alert alert-secondary" role="alert">        
+        <small>
+            <p>¿Cuántos vuelos nacionales has hecho el último año? <strong>{{ vNacional }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="vNacional" 
+            v-model="vNacional" 
+            name="vNacional"
+            max=20>
+            </input>              
+        <small>
+            <p>¿Cuántos vuelos hacia Europa has hecho el último año? <strong>{{ vEuropa }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="vEuropa" 
+            v-model="vEuropa" 
+            name="vEuropa"
+            max=20>
+            </input>             
+        <small>
+            <p>¿Cuántos vuelos hacia Sudamérica has hecho el último año? <strong>{{ vAmerica }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="vAmerica" 
+            v-model="vAmerica" 
+            name="vAmerica"
+            max=20>
+            </input>               
+        <small>
+            <p>¿Cuántos vuelos hacia EEUU has hecho el último año? <strong>{{ vEEUU }}</strong> </p>              
+        </small>
+            <input 
+            type="range" 
+            id="vEEUU" 
+            v-model="vEEUU" 
+            name="vEEUU"
+            max=20>
+            </input>
+    </div>
         
     </div>
+    <hr class="my-4">
+        <h3>Resultado final<h3>
+        <span class="badge badge-warning"> {{ huellaTotal }} </span> <small>Toneladas de CO2</small>
+        <hr class="my-4">
+        <button type="button" class="btn btn-success btn-block"><i class="fas fa-cloud-upload-alt"></i> Guardar resultado</button> 
     </div>
+    
     </b-form>
+    
     </center>
 
 
@@ -147,7 +249,16 @@
                 diasBus: 0,
                 horasBus: 0,
                 comerCarne: false,
-                diasCarne: 0
+                diasCarne: 0,
+                usarGas: false,
+                gas: 0,
+                usarElectricidad: false,
+                electricidad: 0,
+                usarAvion: false,
+                vNacional: 0,
+                vEuropa: 0,
+                vAmerica: 0,
+                vEEUU: 0
             },
             computed: {
                 huellaTotal() {
@@ -157,6 +268,19 @@
                     }
                     if (this.comerCarne) {
                         huella = huella + 2.9*this.diasCarne;
+                    }
+                    if (this.usarGas && this.gas>=10) {
+                        huella = huella + (0.3*this.gas)/10;
+                    }
+                    if (this.electricidad && this.electricidad>=10) {
+                        huella = huella + (0.2*this.electricidad)/100;
+                    }
+                    if (this.usarAvion) {
+                        huella = huella 
+                        + 1*this.vNacional 
+                        + 1.5*this.vEuropa 
+                        + 0.5*this.vAmerica
+                        + 0.8*this.vEEUU;
                     }
                     huella = huella.toFixed(2);
                     return huella;
