@@ -227,7 +227,7 @@
         <h3>Resultado final<h3>
         <span class="badge badge-warning"> {{ huellaTotal }} </span> <small>Toneladas de CO2</small>
         <hr class="my-4">
-        <button type="button" class="btn btn-success btn-block"><i class="fas fa-cloud-upload-alt"></i> Guardar resultado</button> 
+        <button type="submit" class="btn btn-success btn-block"><i class="fas fa-cloud-upload-alt"></i> Guardar resultado</button> 
     </div>
     
     </b-form>
@@ -287,7 +287,33 @@
                 }
             },
             methods:{
-                
+                checkForm:function(e) {
+                    hayError = false;
+                    if(this.usarBus && this.diasBus==0 || this.usarBus && this.horasBus==0){
+                        hayError = true;
+                    }
+                    if(this.comerCarne && this.diasCarne==0){
+                        hayError = true;
+                    }
+                    if(this.usarGas && this.gas==0){
+                        hayError = true;
+                    }
+                    if(this.usarElectricidad && this.electricidad==0){
+                        hayError = true;
+                    }
+                    if(this.usarAvion && this.vNacional==0 || this.usarAvion && this.vEuropa==0 || this.usarAvion && this.vAmerica==0 || this.usarAvion && this.vEEUU==0){
+                        hayError = true;
+                    }
+                    if (!hayError){
+                        document.formRegistro.submit();
+                    } else {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Datos erroneos',
+                        text: '¿Has afirmado que usas un servicio? Entonces no puedes dejar su cantidad en cero. Revisa tus respuestas e intentalo de nuevo'
+                        })
+                    }
+                }
             }
             })
         </script>
