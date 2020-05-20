@@ -220,8 +220,22 @@
             name="vEEUU"
             max=20>
             </input>
+            
     </div>
+
         
+
+
+    </div>
+
+    <div v-show="visible">
+    <b-form-input 
+        type="text" 
+        class="form-control" 
+        id="huella" 
+        v-model="huella" 
+        name="huella">
+    </b-form-input>
     </div>
     <hr class="my-4">
         <h3>Resultado final<h3>
@@ -245,6 +259,7 @@
             const app = new Vue({
             el:'#appVue',
             data:{
+                visible: false,
                 usarBus: false,
                 diasBus: 0,
                 horasBus: 0,
@@ -258,7 +273,8 @@
                 vNacional: 0,
                 vEuropa: 0,
                 vAmerica: 0,
-                vEEUU: 0
+                vEEUU: 0,
+                huella: 0
             },
             computed: {
                 huellaTotal() {
@@ -283,6 +299,7 @@
                         + 0.8*this.vEEUU;
                     }
                     huella = huella.toFixed(2);
+                    this.huella = huella;
                     return huella;
                 }
             },
@@ -301,7 +318,7 @@
                     if(this.usarElectricidad && this.electricidad==0){
                         hayError = true;
                     }
-                    if(this.usarAvion && this.vNacional==0 || this.usarAvion && this.vEuropa==0 || this.usarAvion && this.vAmerica==0 || this.usarAvion && this.vEEUU==0){
+                    if(this.usarAvion && (this.vNacional==0 && this.vEuropa==0 && this.vAmerica==0 && this.vEEUU==0)){
                         hayError = true;
                     }
                     if (!hayError){

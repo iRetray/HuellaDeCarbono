@@ -63,7 +63,7 @@
 <div id="appVue" class="padreHome">
 
 
-<div class="jumbotron">
+<div class="calculadora jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
     <div v-if="hayOrganizacion">
         <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>
@@ -118,6 +118,16 @@
         <button type="button" class="btn btn-success" onclick="location.href='calculoHuella.php'"><i class="fas fa-feather-alt"></i> Realizar mi primer examen</button>
         </center>
     </div>
+
+    <div class="alert alert-danger" role="alert" v-if="haHechoExamen"><center>
+        <p><strong><i class="fas fa-biohazard"></i> Cantidad de examenes hechos:</strong>
+        <h4> {{ cantidad }} </h4>
+    </div>
+
+    <div class="alert alert-success" role="alert" v-if="haHechoExamen"><center>
+        <p><strong><i class="fas fa-temperature-low"></i> Promedio de huela de carbono:</strong>
+        <h4> {{ promedio }} toneladas de CO2</h4>
+    </div>
 </div>
 
 
@@ -164,6 +174,12 @@
                 },
                 haHechoExamen() {
                     return "<?php echo $cantidad; ?>"!=0;
+                },
+                cantidad() {
+                    return "<?php echo $cantidad; ?>";
+                },
+                promedio() {
+                    return "<?php echo $promedio; ?>";
                 }
             },
             methods:{
