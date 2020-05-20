@@ -45,6 +45,11 @@
     padding-top: 50px;
 }
 
+.calculadora {
+    max-width: 600px;
+    margin: auto;
+}
+
 /* Configuración para el responsive movil */
 @media screen and (max-width: 800px){
     .generalVertical {
