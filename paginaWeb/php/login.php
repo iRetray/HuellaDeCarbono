@@ -1,10 +1,9 @@
 <?php
+ob_start();
 require("conexion.php");
-
 $correoLogin = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
-
 $consulta = "SELECT * FROM `usuario`";
 $resultado = mysqli_query($conexion, $consulta);
 $tipoUsuario = "";
@@ -16,8 +15,7 @@ $telefono = "";
 $entidad = "";
 $usuarioEncontrado = false;
 $claveCorrecta = false;
-while ($columna = mysqli_fetch_array( $resultado ))
-{
+while ($columna = mysqli_fetch_array( $resultado )){
 	if ($columna['correo']==$correoLogin) {
 		$usuarioEncontrado = true;
 		if ($columna['contraseña']==$contraseña) {
@@ -29,8 +27,8 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$telefono = $columna['telefono'];
 			$nombreEntidad = $columna['nombreEntidad'];
 			$claveCorrecta = true;
-			}
-        }
+		}
+    }
     if ($columna['usuario']==$usuario) {
 		$usuarioEncontrado = true;
 		if ($columna['contraseña']==$contraseña) {
@@ -43,10 +41,8 @@ while ($columna = mysqli_fetch_array( $resultado ))
 			$nombreEntidad = $columna['nombreEntidad'];
 			$claveCorrecta = true;		
 			}
-        }
-        
+        }       
 }
-
 if ($usuarioEncontrado && $claveCorrecta) {
     session_start();
     $_SESSION['nombre'] = $nombre;
@@ -57,7 +53,6 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['correo'] = $correo;
 	$_SESSION['telefono'] = $telefono;
 	$_SESSION['nombreEntidad'] = $nombreEntidad;
-
 	$consulta = "SELECT * FROM `informes`";
 	$resultado = mysqli_query($conexion, $consulta);
 	while ($columna = mysqli_fetch_array( $resultado )) {
@@ -67,13 +62,10 @@ if ($usuarioEncontrado && $claveCorrecta) {
 			$sumatoria = $columna['sumatoria'];
 		}
 	}
-
 	$_SESSION['cantidad'] = $cantidad;
 	$_SESSION['promedio'] = $promedio;
 	$_SESSION['sumatoria'] = $sumatoria;
-
 	header("Location:../homePages/homeUser.php");
-
 } else{
 	header("Location:../errores/errorLogin.html");
 }

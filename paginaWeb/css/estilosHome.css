@@ -1,8 +1,15 @@
 .padreHome {
     padding: 30px;
+    max-width: 600px;
+    margin: auto;
 }
 
 .home {
     padding: 30px;
     margin: 30px;
+}
+
+.calculadora {
+    max-width: 600px;
+    margin: auto;
 }

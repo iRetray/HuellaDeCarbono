@@ -51,10 +51,10 @@
 			</div>
 		</form>
 	</nav>
-<div id="appVue" class="padreHome">
+<div id="appVue" class="padreHome calculadora">
 
 
-<div class="calculadora jumbotron">
+<div class="jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Entidad nueva</span></h1>
     <div v-if="hayOrganizacion">
     <h4><span class="badge badge-success"><i class="fas fa-university"></i> {{ organizacion }}</span></h4>

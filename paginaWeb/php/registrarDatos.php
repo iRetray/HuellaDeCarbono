@@ -1,6 +1,6 @@
 <?php
+ob_start();
 require("conexion.php");
-
 $correo = $_POST['correo'];
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
@@ -8,9 +8,7 @@ $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
 $edad = $_POST['edad'];
 $telefono = $_POST['telefono'];
-
 $usuarioRepetido = false;
-
 $consulta = "SELECT * FROM `usuario`";
 $resultado = mysqli_query($conexion, $consulta);
 while ($columna = mysqli_fetch_array( $resultado )) {
@@ -18,8 +16,6 @@ while ($columna = mysqli_fetch_array( $resultado )) {
         $usuarioRepetido = true;      
     }
 }
-
-echo($usuarioRepetido);
 if ($usuarioRepetido==1) {
     header("Location:../errores/errorRepetido.html");
 } else {
@@ -35,6 +31,4 @@ if ($usuarioRepetido==1) {
         header("Location:../errores/errorRegistro.html");
     }
 }
-
-
 ?>
