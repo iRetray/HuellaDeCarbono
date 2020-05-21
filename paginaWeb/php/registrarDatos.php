@@ -16,16 +16,18 @@ while ($columna = mysqli_fetch_array( $resultado )) {
         $usuarioRepetido = true;      
     }
 }
+$vacio = "";
 if ($usuarioRepetido==1) {
     header("Location:../errores/errorRepetido.html");
 } else {
     $consulta = "INSERT INTO `usuario`
-    (`usuario`, `contraseña`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`) 
-    VALUES ('$usuario','$contraseña','$nombre','$apellidos','$edad','$correo','$telefono')";
-    if (mysqli_query($conexion, $consulta)) {
+    (`usuario`, `contraseña`, `nombres`, `apellidos`, `edad`, `correo`, `telefono`, `entidad`, `nombreEntidad`) 
+    VALUES ('$usuario','$contraseña','$nombre','$apellidos','$edad','$correo','$telefono','$vacio','$vacio')";
+    $resultadoIngreso = mysqli_query($conexion, $consulta) or die(mysqli_error($conexion));
+    if ($resultadoIngreso) {
         $consultaCalculos = "INSERT INTO `informes`(`idInformes`, `sumatoria`, `promedio`, `cantidad`) 
         VALUES ('$usuario',0,0,0)";
-        mysqli_query($conexion, $consultaCalculos);
+        mysqli_query($conexion, $consultaCalculos) or die(mysqli_error($conexion));
         header("Location:../confirmacionRegistro.html");
     } else {
         header("Location:../errores/errorRegistro.html");
