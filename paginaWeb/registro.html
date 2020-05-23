@@ -54,7 +54,8 @@
                         v-model="correo" 
                         :state="esCorreoValido" 
                         name="correo"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('correo')">
                         </b-form-input>
 
                         <small v-if="esCorreoVacio">
@@ -78,7 +79,8 @@
                         v-model="usuario" 
                         :state="usuarioOK" 
                         name="usuario"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('usuario')">
                         </b-form-input>      
 
                         <b-form-invalid-feedback :state="usuarioOK">
@@ -102,7 +104,8 @@
                         v-model="contraseña" 
                         :state="contraseñaOK" 
                         name="contraseña"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('clave')">
                         </b-form-input>  
                         
                         <b-form-invalid-feedback :state="contraseñaOK">
@@ -127,7 +130,7 @@
                         <b-form-valid-feedback :state="contraseñaOK">
                             Tu contraseña cumple con los estandares de seguridad
                         </b-form-valid-feedback>
-
+                        <br>
                         <b-form-input 
                         type="password" 
                         class="form-control" 
@@ -137,7 +140,8 @@
                         v-model="contraseñaVerificada" 
                         :state="contraseñaIgual" 
                         name="contraseñaVerificada"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('clave')">
                         </b-form-input>
 
                         <small v-if="contraseñaIgual" class="text-success">
@@ -267,10 +271,16 @@
                 apellidos: "",
                 edad: "",
                 telefono: "",
-                formularioCorrecto: null
+                formularioCorrecto: null,
+                correoActivado: false,
+                usuarioActivado: false,
+                claveActivada: false
             },
             computed: {
                 esCorreoInvalido() {
+                    if (!this.correoActivado) {
+                        return null;
+                    }
                     if(!this.correo) {
                         return false;
                     } else if(!this.validEmail(this.correo)) {
@@ -286,6 +296,9 @@
                     return this.telefono.length >= 8;
                 },
                 esCorreoValido() {
+                    if (!this.correoActivado) {
+                        return null;
+                    }
                     if(!this.correo) {
                         return false;
                     } else if(!this.validEmail(this.correo)) {
@@ -295,6 +308,9 @@
                     }
                 },
                 esCorreoVacio() {
+                    if (!this.correoActivado) {
+                        return null;
+                    }
                     if(!this.correo) {
                         return true;
                     } else {
@@ -323,9 +339,15 @@
                     }
                 },
                 usuarioOK() {
+                    if (!this.usuarioActivado) {
+                        return null;
+                    }
                     return this.usuario.length >= 8 && this.usuario.length <= 15
                 },
                 contraseñaOK() {
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     if(this.contraseña.length >= 8)
                         {		
                             var mayuscula = false;
@@ -360,9 +382,15 @@
                         return false;
                 },
                 claveLongitud() {
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     return this.contraseña.length < 8
                 },
                 claveMayuscula() {
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     for(var i = 0;i<this.contraseña.length;i++)
                             {
                                 if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
@@ -373,6 +401,9 @@
                     return true;  
                 },
                 claveMinuscula() {
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     for(var i = 0;i<this.contraseña.length;i++)
                             {
                                 if(this.contraseña.charCodeAt(i) >= 97 && this.contraseña.charCodeAt(i) <= 122)
@@ -383,6 +414,9 @@
                     return true; 
                 },
                 claveNumero() {
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     for(var i = 0;i<this.contraseña.length;i++)
                             {
                                 if(this.contraseña.charCodeAt(i) >= 48 && this.contraseña.charCodeAt(i) <= 57)
@@ -393,6 +427,9 @@
                     return true; 
                 },
                 claveCaracter(){
+                    if (!this.claveActivada) {
+                        return null;
+                    }
                     for(var i = 0;i<this.contraseña.length;i++)
                             {
                                 if(this.contraseña.charCodeAt(i) >= 65 && this.contraseña.charCodeAt(i) <= 90)
@@ -415,7 +452,12 @@
                     return true;
                 },
                 contraseñaIgual() {
-                    return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
+                    if (!this.claveActivada) {
+                        return null;
+                    } else {
+                        return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
+                    }
+                    
                 }
             
             },
@@ -436,6 +478,17 @@
                         text: 'Debes completar todos los campos'
                         })
                     }                 
+                },
+                activarCampo:function(campo){
+                    if (campo=="correo") {
+                        this.correoActivado = true;
+                    }
+                    if (campo=="usuario") {
+                        this.usuarioActivado = true;
+                    }
+                    if (campo=="clave") {
+                        this.claveActivada = true;
+                    }
                 },
                 validEmail:function(email) {
                 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
