@@ -30,7 +30,10 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/estilos.css">
 	<link rel="stylesheet" href="../css/estilosPack2.css">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.min.js"
+  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+  crossorigin="anonymous"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script> 
     <script src="../js/bootstrap.min.js"></script>  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-vue/2.13.0/bootstrap-vue.js"></script>

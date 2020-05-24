@@ -147,7 +147,7 @@
                         <small v-if="contraseñaIgual" class="text-success">
                             Las contraseñas coinciden
                         </small>
-                        <small v-else="contraseñaIgual" class="text-danger">
+                        <small v-if="contraseñaNoIgual" class="text-danger">
                             Las contraseñas no coinciden
                         </small>
 
@@ -164,12 +164,11 @@
                         v-model="nombre" 
                         :state="nombreOK" 
                         name="nombre"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('nombre')">
                         </b-form-input>
 
-                        <small v-if="nombreOK" class="text-success">
-                        </small>
-                        <small v-else="nombreOK" class="text-danger">
+                        <small v-if="nombreOK" class="text-danger">
                             Debes ingresar tu nombre
                         </small>
 
@@ -274,7 +273,8 @@
                 formularioCorrecto: null,
                 correoActivado: false,
                 usuarioActivado: false,
-                claveActivada: false
+                claveActivada: false,
+                nombreActivado: false
             },
             computed: {
                 esCorreoInvalido() {
@@ -325,10 +325,13 @@
                     }
                 },
                 nombreOK() {
+                    if (!this.nombreActivado) {
+                        return null;
+                    }
                     if(!this.nombre) {
-                        return false;
-                    } else {
                         return true;
+                    } else {
+                        return false;
                     }
                 },
                 apellidosOK() {
@@ -458,6 +461,13 @@
                         return this.contraseña == this.contraseñaVerificada && this.contraseña != "";
                     }
                     
+                },
+                contraseñaNoIgual() {
+                    if (!this.claveActivada) {
+                        return null;
+                    } else {
+                        return this.contraseña != this.contraseñaVerificada && this.contraseña != "";
+                    }
                 }
             
             },
@@ -488,6 +498,9 @@
                     }
                     if (campo=="clave") {
                         this.claveActivada = true;
+                    }
+                    if (campo=="nombre") {
+                        this.nombreActivado = true;
                     }
                 },
                 validEmail:function(email) {

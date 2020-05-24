@@ -1,4 +1,5 @@
 <?php
+$servidor = "localhost";
 $usuarioBD = "id13717416_root";
 $contraseña = "Zop6/c]^SG2Uf#Bm";
 $baseDeDatos = "id13717416_footprint";

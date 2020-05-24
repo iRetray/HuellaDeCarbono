@@ -30,7 +30,7 @@ error_reporting(E_ALL);
 
     $codigoCorrecto = false;
     $nombreEntidad = "";
-    while ($columna = mysqli_fetch_array( $resultado )) {
+    while ($columna = @mysqli_fetch_array($resultado)) {
 	if ($columna['idEntidad']==$codigo) {
             $codigoCorrecto = true;
             $nombreEntidad = $columna['nombre'];
