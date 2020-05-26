@@ -162,7 +162,7 @@
                         id="nombre"
                         placeholder="Ingresa tu nombre"
                         v-model="nombre" 
-                        :state="nombreOK" 
+                        :state="nombreNOOK" 
                         name="nombre"
                         autocomplete="off"
                         v-on:click="activarCampo('nombre')">
@@ -185,12 +185,11 @@
                         v-model="apellidos" 
                         :state="apellidosOK" 
                         name="apellidos"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('apellido')">
                         </b-form-input>
-
-                        <small v-if="apellidosOK" class="text-success">
-                        </small>
-                        <small v-else="apellidosOK" class="text-danger">
+                        
+                        <small v-if="apellidosNOOK" class="text-danger">
                             Debes ingresar tus apellidos
                         </small>
 
@@ -207,12 +206,11 @@
                         v-model="edad" 
                         :state="edadEntera" 
                         name="edad"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('edad')">
                         </b-form-input>
 
-                        <small v-if="edadEntera" class="text-danger">
-                        </small>
-                        <small v-else="edadEntera" class="text-danger">
+                        <small v-if="edadNOEntera" class="text-danger">
                             Tu edad debe ser un numero completo
                         </small>
 
@@ -229,12 +227,11 @@
                         v-model="telefono" 
                         :state="telefonoOK" 
                         name="telefono"
-                        autocomplete="off">
+                        autocomplete="off"
+                        v-on:click="activarCampo('telefono')">
                         </b-form-input>
 
-                        <small v-if="telefonoOK" class="text-danger">
-                        </small>
-                        <small v-else="telefonoOK" class="text-danger">
+                        <small v-if="telefonoNOOK" class="text-danger">
                             El telefono debe tener al menos 8 numeros
                         </small>
 
@@ -274,7 +271,10 @@
                 correoActivado: false,
                 usuarioActivado: false,
                 claveActivada: false,
-                nombreActivado: false
+                nombreActivado: false,
+                apellidoActivado : false,
+                edadActivado: false,
+                telefonoActivado: false
             },
             computed: {
                 esCorreoInvalido() {
@@ -290,10 +290,32 @@
                     }
                 },
                 edadEntera() {
-                    return this.edad % 1 == 0 && this.edad.length != 0;
+                    if (!this.edadActivado) {
+                        return null
+                    } else {
+                        return this.edad % 1 == 0 && this.edad.length != 0;
+                    }                    
+                },
+                edadNOEntera() {
+                    if (!this.edadActivado) {
+                        return null
+                    } else {
+                        return this.edad % 1 != 0 || this.edad.length == 0;
+                    }                    
                 },
                 telefonoOK() {
-                    return this.telefono.length >= 8;
+                    if (!this.telefonoActivado) {
+                        return null;
+                    } else {
+                        return this.telefono.length >= 8;
+                    }                    
+                },
+                telefonoNOOK() {
+                    if (!this.telefonoActivado) {
+                        return null;
+                    } else {
+                        return this.telefono.length < 8;
+                    }                    
                 },
                 esCorreoValido() {
                     if (!this.correoActivado) {
@@ -339,16 +361,29 @@
                         return null;
                     }
                     if(!this.nombre) {
-                        return true;
-                    } else {
                         return false;
+                    } else {
+                        return true;
                     }
                 },
                 apellidosOK() {
+                    if (!this.apellidoActivado) {
+                        return null;
+                    }
                     if(!this.apellidos) {
                         return false;
                     } else {
                         return true;
+                    }
+                },
+                apellidosNOOK() {
+                    if (!this.apellidoActivado) {
+                        return null;
+                    }
+                    if(!this.apellidos) {
+                        return true;
+                    } else {
+                        return false;
                     }
                 },
                 usuarioOK() {
@@ -483,6 +518,13 @@
             },
             methods:{
                 checkForm:function(e) {
+                    this.correoActivado = true;
+                    this.usuarioActivado = true;
+                    this.claveActivada = true;
+                    this.nombreActivado = true;
+                    this.apellidoActivado = true;
+                    this.edadActivado = true;
+                    this.telefonoActivado = true;
                     if (
                         this.telefono.length>=8 && this.validEmail(this.correo) && 
                         this.usuario.length>=8 && this.usuario.length<= 15 &&
@@ -511,6 +553,15 @@
                     }
                     if (campo=="nombre") {
                         this.nombreActivado = true;
+                    }
+                    if (campo=="apellido") {
+                        this.apellidoActivado = true;
+                    }
+                    if (campo=="edad") {
+                        this.edadActivado = true;
+                    }
+                    if (campo=="telefono") {
+                        this.telefonoActivado = true;
                     }
                 },
                 validEmail:function(email) {
