@@ -1,4 +1,5 @@
 <?php
+    require_once('obtenerFecha.php');
     session_start();
     $nombre = $_SESSION['nombre'];  
     $usuario = $_SESSION['usuario'];
@@ -14,6 +15,8 @@
 	$correo = $_SESSION['correo'];
     $telefono = $_SESSION['telefono'];
     $nombreEntidad = $_SESSION['nombreEntidad'];
+
+    $fecha = getdate();
 
     if ($nombre=="") {
         header("Location:../index.html");
