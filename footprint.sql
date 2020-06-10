@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 31-05-2020 a las 20:58:30
+-- Servidor: localhost
+-- Tiempo de generación: 10-06-2020 a las 22:59:47
 -- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.4
+-- Versión de PHP: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,18 +50,19 @@ INSERT INTO `entidad` (`idEntidad`, `nombre`, `direccion`, `correo`, `clave`) VA
 
 CREATE TABLE `informes` (
   `idInformes` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `sumatoria` double NOT NULL,
-  `promedio` double NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `resultado` double NOT NULL,
+  `fecha` varchar(100) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `informes`
 --
 
-INSERT INTO `informes` (`idInformes`, `sumatoria`, `promedio`, `cantidad`) VALUES
-('elTymkaso', 0, 0, 0),
-('TheRetray', 23.93, 5.9825, 4);
+INSERT INTO `informes` (`idInformes`, `resultado`, `fecha`) VALUES
+('TheRetray', 6.2, 'Miercoles 10 de Junio del 2020 / 10:2 AM'),
+('TheRetray', 1.2, 'Miercoles 10 de Junio del 2020 / 10:4 AM'),
+('TheRetray', 1.06, 'Miercoles 10 de Junio del 2020 / 11:29 AM'),
+('TheRetray', 36.6, 'Miercoles 10 de Junio del 2020 / 12:39 AM');
 
 -- --------------------------------------------------------
 
@@ -99,12 +100,6 @@ INSERT INTO `usuario` (`idUsuario`, `usuario`, `contraseña`, `nombres`, `apelli
 --
 ALTER TABLE `entidad`
   ADD PRIMARY KEY (`idEntidad`);
-
---
--- Indices de la tabla `informes`
---
-ALTER TABLE `informes`
-  ADD PRIMARY KEY (`idInformes`);
 
 --
 -- Indices de la tabla `usuario`
