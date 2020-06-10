@@ -26,30 +26,26 @@
 
     require("../php/conexion.php");
 
-    $consulta = "SELECT `idInformes`, `sumatoria`, `promedio`, `cantidad` FROM `informes` WHERE 1";
-    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
-    while ($columna = mysqli_fetch_array( $resultado )) {
-        if ($columna['idInformes']==$usuario) {
-            $nuevaSumatoria = $columna['sumatoria']+$huellaTotal;
-            $cantidadNueva = $columna['cantidad']+1;
-            $promedioNuevo = ($nuevaSumatoria)/$cantidadNueva;
-        }
-    }
-
-    $consultaInsertar = "UPDATE `informes` 
-    SET `sumatoria`='$nuevaSumatoria',`promedio`='$promedioNuevo',`cantidad`='$cantidadNueva' 
-    WHERE idInformes = '$usuario'";
-    $resultado = mysqli_query($conexion, $consultaInsertar) or die (mysqli_error($conexion));
+    $consulta = "INSERT INTO `informes`(`idInformes`, `resultado`, `fecha`) VALUES ('$usuario','$huellaTotal','$fechaString')";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));    
 
     $consultaSesion = "SELECT * FROM `informes`";
     $resultado = mysqli_query($conexion, $consultaSesion) or die (mysqli_error($conexion));
+
+    $cantidadCalculos = 0;
+    $sumatoria = 0;
+
     while ($columna = mysqli_fetch_array( $resultado )) {
         if ($columna['idInformes']==$usuario) {
-            $_SESSION['cantidad'] = $columna['cantidad'];
-            $_SESSION['sumatoria'] = $columna['sumatoria'];
-            $_SESSION['promedio'] = $columna['promedio'];
+            $cantidadCalculos++;
+            $sumatoria = $sumatoria+$columna['resultado'];
         }
     }
+
+    $promedio = $sumatoria / $cantidadCalculos;
+    $_SESSION['cantidad'] = $cantidadCalculos;
+    $_SESSION['sumatoria'] = $sumatoria;
+    $_SESSION['promedio'] = $promedio; 
 
     header("Location:homeUser.php");
 ?>

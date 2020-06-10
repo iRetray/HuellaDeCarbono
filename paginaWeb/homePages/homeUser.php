@@ -43,6 +43,8 @@
     <script type="text/javascript" src="../js/scriptsVerificacion.js"></script>
     <link rel="stylesheet" href="../css/estiloSlider.css">
     <link rel="stylesheet" href="../css/estilosHome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -65,8 +67,9 @@
 	</nav>
 <div id="appVue" class="padreHome">
 
-
-<div class="calculadora jumbotron">
+<div class="row">
+    <div class="col-4">
+    <div class="calculadora jumbotron">
     <h1>{{ nombre }} <span class="badge badge-secondary"><i class="fas fa-users"></i> Usuario nuevo</span></h1>
     <h3 v-show="haHechoExamen">Promedio de huella de carbono: <span class="badge badge-warning"><i class="fas fa-biohazard"></i> {{ promedio }}</span></h3>
     <div v-if="hayOrganizacion">
@@ -133,9 +136,73 @@
         <h4> {{ promedio }} toneladas de CO2</h4>
     </div>
 </div>
+    </div>
+    <div class="col-8">
+        <div class="informes jumbotron">
+            <h1>Historial de calculos</h1>
+            <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                <th>Fecha</th>
+                <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="examen in examenes">
+                    <td>{{ examen.fecha }}</td>
+                    <td>{{ examen.resultado }}</td>
+                </tr>                
+            </tbody>
+            </table>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </div>
+</div>
+
+
 
 
 </div>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
 
 
         <!-- Script -->
@@ -143,7 +210,13 @@
             const app = new Vue({
             el:'#appVue',
             data:{
-                conCorreo: false                
+                conCorreo: false,
+                examenes: []             
+            },
+            mounted () {
+                axios
+                .get('obtenerCalculos.php')
+                .then(response => (this.examenes = response.data))
             },
             computed: {
                 isChecked() {

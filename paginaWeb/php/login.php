@@ -55,15 +55,20 @@ if ($usuarioEncontrado && $claveCorrecta) {
 	$_SESSION['nombreEntidad'] = $nombreEntidad;
 	$consulta = "SELECT * FROM `informes`";
 	$resultado = mysqli_query($conexion, $consulta);
-	while ($columna = mysqli_fetch_array( $resultado )) {
-		if ($columna['idInformes']==$usuario) {
-			$cantidad = $columna['cantidad'];
-			$promedio = $columna['promedio'];
-			$sumatoria = $columna['sumatoria'];
-		}
-	}
-	$_SESSION['cantidad'] = $cantidad;
-	$_SESSION['promedio'] = $promedio;
+	$cantidadCalculos = 0;
+    $sumatoria = 0;
+
+    while ($columna = mysqli_fetch_array( $resultado )) {
+        if ($columna['idInformes']==$usuario) {
+            $cantidadCalculos++;
+            $sumatoria = $sumatoria+$columna['resultado'];
+        }
+    }
+
+	$promedio = $sumatoria / $cantidadCalculos;
+	
+    $_SESSION['promedio'] = $promedio; 
+	$_SESSION['cantidad'] = $cantidadCalculos;
 	$_SESSION['sumatoria'] = $sumatoria;
 	header("Location:../homePages/homeUser.php");
 } else{

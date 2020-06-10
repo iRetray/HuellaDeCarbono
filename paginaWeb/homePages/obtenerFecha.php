@@ -74,11 +74,13 @@ function obtenerHora($fecha, &$hora, &$minuto, &$horario){
         $horario = "AM";
         $hora = $fecha['hours'];
     }
-    $minuto = $fecha['minutes'];
-    
+    if ($fecha['minutes']<=9) {
+        $minuto = "0"+$fecha['minutes'];
+    } else {
+        $minuto = $fecha['minutes'];
+    }    
 }
 convertirFecha($fecha, $dia, $nombreDia, $mes, $año);
 obtenerHora($fecha, $hora, $minuto, $horario);
 $fechaString = $nombreDia." ".$dia." de ".$mes." del ".$año." / ".$hora.":".$minuto." ".$horario;
-echo($fechaString); 
 ?>

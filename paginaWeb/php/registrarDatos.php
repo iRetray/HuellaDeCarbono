@@ -25,9 +25,6 @@ if ($usuarioRepetido==1) {
     VALUES ('$usuario','$contraseña','$nombre','$apellidos','$edad','$correo','$telefono','$vacio','$vacio')";
     $resultadoIngreso = mysqli_query($conexion, $consulta) or die(mysqli_error($conexion));
     if ($resultadoIngreso) {
-        $consultaCalculos = "INSERT INTO `informes`(`idInformes`, `sumatoria`, `promedio`, `cantidad`) 
-        VALUES ('$usuario',0,0,0)";
-        mysqli_query($conexion, $consultaCalculos) or die(mysqli_error($conexion));
         header("Location:../confirmacionRegistro.html");
     } else {
         header("Location:../errores/errorRegistro.html");
